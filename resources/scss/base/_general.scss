@@ -1,6 +1,54 @@
-// Basic styles
+@use '../abstracts/colors' as *;
+@use '../tools/fluid-unit' as *;
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+:root {
+
+  @each $color-name, $color-hsl in $colors {
+    --color-#{$color-name}: #{hsl(($color-hsl))};
+    --color-#{$color-name}-hsl: #{$color-hsl};
+  }
+
+  --color-text: var(--color-black);
+  --color-text-inverse: var(--color-white);
+
+  --text-underline-thickness: 0.05em;
+  --text-underline-active-thickness: 0.1em;
+  --text-underline-offset: 0.15em;
+
+  --space-xs: #{fluid-unit(4, 8)};
+  --space-s: #{fluid-unit(8, 16)};
+  --space-m: #{fluid-unit(16, 24)};
+  --space-l: #{fluid-unit(24, 40)};
+  --space-xl: #{fluid-unit(30, 48)};
+  --space-xxl: #{fluid-unit(42, 80)};
+
+  --space-s-l: #{fluid-unit(8, 40)};
+  --space-xl-xxxl: #{fluid-unit(30, 140)};
+
+  --transition-duration: 200ms;
+  --transition-timing-function: ease-in-out;
+
+  --border-radius-xs: #{fluid-unit(8, 12)};
+  --border-radius-s: #{fluid-unit(10, 18)};
+  --border-radius-m: #{fluid-unit(12, 24)};
+  --border-radius-l: #{fluid-unit(24, 42)};
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, sans-serif;
+}
+
+h1 {
+    margin-inline: var(--space-l);
+
+    @include mq(desktop) {
+        font-weight: 300;
+    }
 }

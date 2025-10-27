@@ -1,12 +1,10 @@
-$ff-sans: "Open Sans", sans-serif;
+$font-family-base: 'OpenSans', 'Arial', 'Verdana', system-ui, sans-serif;
+$font-name-base: 'OpenSans';
 
-$font-sizes: (
-  900: 3.75rem,
-  800: 3rem,
-  600: 1.5rem,
-  500: 1.3125rem,
-  400: 1.125rem,
-);
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
-$fw-400: 400;
-$fw-700: 700;
+$fluid-min-bp: 320;
+$fluid-max-bp: 1920;
