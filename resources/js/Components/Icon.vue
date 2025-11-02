@@ -1,0 +1,56 @@
+
+<template>
+  <div
+    v-if="svgContent"
+    :class="class"
+    v-html="svgContent"
+  />
+  <div
+    v-else
+    :class="class"
+    class="inline-block bg-gray-200 rounded"
+    :title="`Icon not found: ${name}`"
+  />
+</template>
+
+
+
+<script setup>
+import { ref, watch, onMounted } from 'vue';
+
+const props = defineProps({
+  name: {
+    type: String,
+    required: true
+  },
+  class: {
+    type: String,
+    default: 'icon'
+  }
+});
+
+const svgContent = ref('');
+
+const loadIcon = async (iconName) => {
+  try {
+   const icons = import.meta.glob('../images/icons/*.svg', { as: 'raw', eager: false });
+
+    const iconKey = Object.keys(icons).find(key =>
+      key.endsWith(`/${iconName}.svg`)
+    );
+
+    if (iconKey) {
+      svgContent.value = await icons[iconKey]();
+    } else {
+      console.warn(`Icon "${iconName}" not found`);
+      svgContent.value = '';
+    }
+  } catch (error) {
+    console.error(`Error loading icon "${iconName}":`, error);
+    svgContent.value = '';
+  }
+};
+
+onMounted(() => loadIcon(props.name));
+watch(() => props.name, loadIcon);
+</script>
