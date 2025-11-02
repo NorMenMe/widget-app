@@ -1,0 +1,19 @@
+@use '../abstracts/typography' as *;
+
+@mixin font-face($family, $src:'', $style: normal, $weight: normal) {
+  @font-face {
+    font-family: $family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    src: url('#{$src}.woff2') format('woff2');
+  }
+}
+
+// Load the font // -----------------------------------------------------------
+@include font-face(
+  $font-name-base,
+  '../../../resources',
+  normal,
+  400 700
+);
