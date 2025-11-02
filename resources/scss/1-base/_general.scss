@@ -1,5 +1,5 @@
-@use '../abstracts/colors' as *;
-@use '../tools/fluid-unit' as *;
+@use '../0-abstracts/colors' as *;
+@use '../2-tools/fluid-unit' as *;
 
 html {
   scroll-behavior: smooth;
@@ -45,10 +45,3 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-h1 {
-    margin-inline: var(--space-l);
-
-    @include mq(desktop) {
-        font-weight: 300;
-    }
-}

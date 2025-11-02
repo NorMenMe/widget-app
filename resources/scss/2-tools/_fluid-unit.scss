@@ -1,6 +1,6 @@
 @use 'sass:math';
-@use '../abstracts/typography' as *;
-@use '../tools/px-to-rem' as *;
+@use '../0-abstracts/typography' as *;
+@use '../2-tools/px-to-rem' as *;
 
 @function round-value($number, $decimals: 0) {
   $n: 1;
