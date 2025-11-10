@@ -1,7 +1,7 @@
 <template>
     <div class="search-field">
-        <icon name="magnifier"></icon>
-        <input-search></input-search>
+        <icon class="search-field__icon" name="magnifier"></icon>
+        <input-search class="search-field__input"></input-search>
     </div>
 </template>
 

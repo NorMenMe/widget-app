@@ -1,9 +1,18 @@
 <template>
     <input
+    :class="class"
+    class="input--search"
     type="search"
     id="input-search"
-    class="input--search">
+    >
 </template>
 
-<script>
+<script setup>
+
+const props = defineProps({
+  class: {
+    type: String,
+    default: 'input'
+  }
+});
 </script>

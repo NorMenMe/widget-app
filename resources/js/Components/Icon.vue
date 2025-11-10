@@ -3,6 +3,7 @@
   <span
     v-if="svgContent"
     :class="class"
+    class="icon"
     v-html="svgContent"
   />
   <span
