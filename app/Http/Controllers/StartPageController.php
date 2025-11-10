@@ -23,7 +23,7 @@ class StartPageController extends Controller
         }
 
         return Inertia::render('StartPage', [
-            'posts' => $data,
+            'data' => $data,
             'apiError' => empty($data) ? 'Failed to fetch data' : null,
         ]);
     }

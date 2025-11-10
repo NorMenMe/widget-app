@@ -1,14 +1,12 @@
 <template>
-    <teaser-dashboard></teaser-dashboard>
-    <icon name="moon-cloud"/>
+    <teaser-dashboard :data="data"></teaser-dashboard>
 </template>
 
 <script setup>
-    import Icon from '@/Components/Icon.vue';
     import TeaserDashboard from '@/Components/Molecules/TeaserDashboard.vue';
 
     defineProps({
-        posts: Array,
+        data: Array,
         apiError: String
     });
 </script>

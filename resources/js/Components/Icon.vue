@@ -1,11 +1,11 @@
 
 <template>
-  <div
+  <span
     v-if="svgContent"
     :class="class"
     v-html="svgContent"
   />
-  <div
+  <span
     v-else
     :class="class"
     class="inline-block bg-gray-200 rounded"
