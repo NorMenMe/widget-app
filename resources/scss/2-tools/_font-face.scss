@@ -10,10 +10,10 @@
   }
 }
 
-// Load the font // -----------------------------------------------------------
+// Roboto Regular // -----------------------------------------------------------
 @include font-face(
   $font-name-base,
-  '../../../resources',
+  '../font/roboto/Roboto-Regular',
   normal,
-  400 700
+  400
 );

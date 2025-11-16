@@ -1,4 +1,5 @@
 @use '../0-abstracts/colors' as *;
+@use '../0-abstracts/typography' as *;
 @use '../2-tools/fluid-unit' as *;
 
 html {
@@ -42,6 +43,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: $font-family-base;
 }
 
