@@ -13,5 +13,10 @@
 <script setup>
     import SearchField from '@/Components/Molecules/SearchField.vue';
     import TeaserDashboard from '@/Components/Molecules/TeaserDashboard.vue';
+
+    defineProps({
+        data: Array,
+        apiError: String
+    });
 </script>
 

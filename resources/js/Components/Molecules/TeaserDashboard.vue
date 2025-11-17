@@ -10,6 +10,7 @@
              <h2>
                 <span>Today</span>
                 <icon name=""></icon>
+                    :name="weatherIcon"
             </h2>
         </header>
 
@@ -31,8 +32,8 @@
 </template>
 
 <script setup>
-    import { toRefs } from 'vue';
-    import SearchField from './SearchField.vue';
+    import { toRefs, computed } from 'vue';
+    import Icon from '@/Components/Atoms/Icon.vue';
     import Icon from '@/Components/Icon.vue';
 
 
@@ -44,5 +45,16 @@
     });
 
     const { data } = toRefs(props);
+
+    const WEATHER_ICONS = ['sun','cloud','rain'];
+
+    const currentWeatherIcon = computed(() => {
+        const stringSearch = data?.value?.current?.weather_descriptions.join(' ').toLowerCase();
+
+        if ( !stringSearch) return;
+
+        const matchingIcon = WEATHER_ICONS.find( icon => stringSearch.includes(icon));
+        return matchingIcon || 'cloud';
+    })
 </script>
 
