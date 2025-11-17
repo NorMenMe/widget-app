@@ -1,0 +1,33 @@
+@use '../2-tools/fluid-unit' as *;
+
+
+.search-field {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: start;
+    padding-inline-start: fluid-unit(10, 25);
+    border: 1.5px solid var((--color-black));
+    border-radius: 2px;
+}
+
+.search-field__icon {
+    min-width: 24px;
+    grid-column: 1 / 2;
+}
+
+.search-field__icon svg {
+    width: 16px;
+}
+
+.search-field__input {
+    grid-column: 2 / 3;
+}
+
+.search-field__input:focus-visible {
+    outline: 3px dashed hotpink;
+    outline-offset: 3px;
+}
+
+.search-field__input::placeholder  {
+    font-size: fluid-unit(14, 18);
+}

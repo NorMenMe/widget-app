@@ -17,7 +17,8 @@
 @use '4-atoms/buttons' as buttons;
 @use '4-atoms/icons' as icons;
 
-/* 4. Molecules */
+/* 5. Molecules */
+@use '5-molecules/search-field' as search-field;
 @use '5-molecules/teaser-dashboard' as teaser-dashboard;
 
 
