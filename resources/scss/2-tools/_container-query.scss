@@ -1,0 +1,9 @@
+
+/// Mixin for container query
+@mixin container-query($container-name, $condition-size) {
+    @if $condition-size == small {
+        @container #{$container-name} (width >= 700px) {
+            @content;
+        }
+    }
+}
