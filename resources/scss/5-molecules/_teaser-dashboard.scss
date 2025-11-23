@@ -1,5 +1,40 @@
 .teaser-dashboard {
+    margin-block-start: var(--space-xxxl);
     max-width: 1200px;
     margin-inline: auto;
-    border: 1px solid teal;
+}
+
+.teaser-dashboard__header h1,
+.teaser-dashboard__header h2 {
+    display: grid;
+    row-gap: var( --space-s);
+    text-align: center;
+}
+
+.teaser-dashboard__icon {
+    display: block;
+
+    & > svg {
+        max-width: 45px;
+    }
+}
+
+.teaser-dashboard__list {
+    padding: var(--space-m);
+    margin-block-start: var(--space-xxl);
+    border: 1px solid var(--color-black);
+    border-radius: 4px;
+    box-shadow:
+      1px 2px 2px hsl(60 4% 11% / 0.333),
+      2px 4px 4px hsl(60 4% 11% / 0.333),
+      3px 6px 6px hsl(60 4% 11% / 0.333);
+}
+
+.teaser-dashboard__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    & > span:last-child {
+        text-align: end;
+    }
 }
