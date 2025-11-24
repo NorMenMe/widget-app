@@ -11,12 +11,8 @@
     text-align: center;
 }
 
-.teaser-dashboard__icon {
-    display: block;
-
-    & > svg {
-        max-width: 45px;
-    }
+.teaser-dashboard__icon > svg {
+    max-width: 45px;
 }
 
 .teaser-dashboard__list {

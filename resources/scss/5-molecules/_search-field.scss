@@ -14,6 +14,7 @@
     left: 0;
     height: 100%;
     margin-inline-start: var(--space-s);
+    display: inline-flex;
 
     & > svg {
         width: 1em;
