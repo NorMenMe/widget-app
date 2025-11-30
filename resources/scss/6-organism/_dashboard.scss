@@ -1,14 +1,27 @@
 @use '../2-tools/fluid-unit' as *;
 @use '../2-tools/container-query' as *;
 
-.dashboard__inner {
-    margin-inline: fluid-unit(10,25);
-    margin-block-start: fluid-unit(20, 35);
+.dashboard {
     container: dashboard / inline-size;
 }
 
-.dashboard__main {
-    @include container-query(dashboard, small) {
-        max-width: 400px;
+.dashboard__inner {
+    margin-inline: var(--space-m);
+    margin-block-start: var(--space-l);
+
+    @include container-query(dashboard, medium) {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 20px;
+    }
+}
+
+.dashboard__extra {
+    background-color: var(--color-grey);
+    border-radius: 12px;
+    margin-block-start: var(--space-l);
+
+    @include container-query(dashboard, medium) {
+        margin-block-start: revert;
     }
 }
