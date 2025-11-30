@@ -1,7 +1,7 @@
 
 /// Mixin for container query
 @mixin container-query($container-name, $condition-size) {
-    @if $condition-size == small {
+    @if $condition-size == medium {
         @container #{$container-name} (width >= 700px) {
             @content;
         }
