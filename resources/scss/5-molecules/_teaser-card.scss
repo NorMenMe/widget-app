@@ -1,0 +1,50 @@
+.teaser-card {
+    max-width: 150px;
+    min-height: 180px;
+    align-content: center;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--color-white);
+}
+
+.teaser-card__article {
+    text-align: center;
+    display: grid;
+
+    & > * {
+        grid-area: 1 / 1;
+    }
+}
+
+.teaser-card__article .front {
+  opacity: 1;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 600ms ease, opacity 200ms ease;
+}
+
+.teaser-card__article .back {
+  opacity: 0;
+  transform: rotateY(-180deg);
+  transition: transform 400ms ease, opacity 200ms ease;
+
+   & > p:first-child {
+    margin: 0;
+  }
+}
+
+.teaser-card:hover {
+  & .front {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+
+  & .back {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+.teaser-card__icon > svg {
+    max-width: 45px;
+}

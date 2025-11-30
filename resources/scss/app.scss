@@ -20,6 +20,8 @@
 /* 5. Molecules */
 @use '5-molecules/search-field' as search-field;
 @use '5-molecules/teaser-dashboard' as teaser-dashboard;
+@use '5-molecules/cards' as cards;
+@use '5-molecules/teaser-card' as teaser-card;
 
 /* 6. Organism */
 @use '6-organism/dashboard' as dashboard;
