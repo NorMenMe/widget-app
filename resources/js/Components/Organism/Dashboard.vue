@@ -6,7 +6,7 @@
                 <teaser-dashboard :data="data"></teaser-dashboard>
             </div>
             <div class="dashboard__extra">
-                <cards></cards>
+                <cards :data="data"></cards>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
     import Cards from '@/Components/Molecules/Cards.vue';
 
     defineProps({
-        data: Array,
+        data: Object,
         apiError: String
     });
 </script>
