@@ -9,7 +9,7 @@
                 <span>Today</span>
                 <icon
                     class="teaser-dashboard__icon"
-                    :name="currentWeatherIcon"
+                    :name="currentIcon"
                 ></icon>
             </h2>
         </header>
@@ -33,7 +33,7 @@
 <script setup>
 import { toRefs, computed } from "vue";
 import Icon from "@/Components/Atoms/Icon.vue";
-
+import { useCurrentIcon } from "@/Components/Helpers/helpers.icon";
 
 const props = defineProps({
 	data: {
@@ -41,26 +41,8 @@ const props = defineProps({
 		required: true,
 	},
 });
-
 const { data } = toRefs(props);
 
-const WEATHER_ICONS = ["sun", "cloud", "rain"];
-
-const currentWeatherIcon = computed(() => {
-	let stringSearch = null;
-
-    if (data.value.current) {
-        stringSearch = data?.value?.current?.weather_descriptions
-		.join(" ")
-		.toLowerCase();
-    } else {
-        stringSearch = data.value?.hourly[0]?.weather_descriptions[0]
-    }
-
-    const matchingIcon = WEATHER_ICONS.find((icon) =>
-		stringSearch.includes(icon),
-	);
-	return matchingIcon || "cloud";
-});
+const currentIcon = useCurrentIcon(data);
 </script>
 
