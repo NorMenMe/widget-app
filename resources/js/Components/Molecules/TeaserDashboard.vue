@@ -1,20 +1,19 @@
 <template>
     <section class="teaser-dashboard">
-        <search-field class="teaser-dashboard__searchfield"></search-field>
-
-        <header class="teaser-dashboard__header">
+        <header class="teaser-dashboard__header flow-l">
             <h1>
                 <span class="location">{{ data.location.region }}</span>
                 <span class="temperature">{{ data.current.temperature }}°</span>
             </h1>
-             <h2>
+            <h2>
                 <span>Today</span>
-                <icon name=""></icon>
-                    :name="weatherIcon"
+                <icon
+                    class="teaser-dashboard__icon"
+                    :name="currentWeatherIcon"
+                ></icon>
             </h2>
         </header>
-
-        <ul class="teaser-dashboard__list">
+        <ul class="teaser-dashboard__list" role="list">
             <li class="teaser-dashboard__item">
                 <span>Precipitation</span>
                 <span>{{ data.current.precip }}mm</span>
@@ -32,29 +31,36 @@
 </template>
 
 <script setup>
-    import { toRefs, computed } from 'vue';
-    import Icon from '@/Components/Atoms/Icon.vue';
-    import Icon from '@/Components/Icon.vue';
+import { toRefs, computed } from "vue";
+import Icon from "@/Components/Atoms/Icon.vue";
 
 
-    const props = defineProps({
-        data : {
-            type: Object,
-            required: true,
-        }
-    });
+const props = defineProps({
+	data: {
+		type: Object,
+		required: true,
+	},
+});
 
-    const { data } = toRefs(props);
+const { data } = toRefs(props);
 
-    const WEATHER_ICONS = ['sun','cloud','rain'];
+const WEATHER_ICONS = ["sun", "cloud", "rain"];
 
-    const currentWeatherIcon = computed(() => {
-        const stringSearch = data?.value?.current?.weather_descriptions.join(' ').toLowerCase();
+const currentWeatherIcon = computed(() => {
+	let stringSearch = null;
 
-        if ( !stringSearch) return;
+    if (data.value.current) {
+        stringSearch = data?.value?.current?.weather_descriptions
+		.join(" ")
+		.toLowerCase();
+    } else {
+        stringSearch = data.value?.hourly[0]?.weather_descriptions[0]
+    }
 
-        const matchingIcon = WEATHER_ICONS.find( icon => stringSearch.includes(icon));
-        return matchingIcon || 'cloud';
-    })
+    const matchingIcon = WEATHER_ICONS.find((icon) =>
+		stringSearch.includes(icon),
+	);
+	return matchingIcon || "cloud";
+});
 </script>
 
