@@ -4,12 +4,9 @@
 	"type": "module",
 	"scripts": {
 		"build": "vite build",
-		"dev": "vite",
-		"lint": "ultra biome check . && stylelint --aei **/*.{css,scss}",
-		"lint:fix": "ultra stylelint --aei --fix **/*.{css,scss} && biome check --write ."
+		"dev": "vite"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.7",
 		"@inertiajs/vue3": "^2.0.0",
 		"@tailwindcss/forms": "^0.5.3",
 		"@tailwindcss/vite": "^4.0.0",
