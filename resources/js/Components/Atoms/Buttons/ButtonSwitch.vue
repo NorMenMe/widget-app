@@ -1,25 +1,27 @@
 
 <template>
-    <div class="button-switch" v-bind="$attrs">
-        <label for="input-switch-weather">
+    <div class="button-switch">
+        <label for="input-switch-weather" class="button-switch__label">
             <input
                 type="radio"
                 id="input-switch-weather"
+                class="button-switch__input"
                 :checked="internalValue === 'cards'"
                 @change="handleChange('cards')"
                >
             </input>
-            Weather Forecast
+            <span>Weather Forecast</span>
         </label>
-        <label for="input-switch-messenger">
+        <label for="input-switch-messenger" class="button-switch__label">
             <input
                 type="radio"
                 id="input-switch-messenger"
+                class="button-switch__input"
                 :checked="internalValue === 'messenger'"
                 @change="handleChange('messenger')"
             >
             </input>
-            Messenger
+            <span>Messenger</span>
         </label>
     </div>
 </template>
