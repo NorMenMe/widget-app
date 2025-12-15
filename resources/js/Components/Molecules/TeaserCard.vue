@@ -1,7 +1,7 @@
 <template>
     <section class="teaser-card">
         <article class="teaser-card__article">
-            <div class="front">
+            <div class="front flow-s">
                 <h4>{{ getDay }}</h4>
                 <icon
                     class="teaser-card__icon"
