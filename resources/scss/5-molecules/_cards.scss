@@ -2,7 +2,9 @@
 @use '../2-tools/fluid-unit' as *;
 
 .cards {
-    margin-block-start: var(--space-xxxl);
+    @include container-query(dashboard, medium) {
+        margin-block-start: calc(2 * var(--space-xl));
+    }
 }
 
 .cards__inner {
@@ -10,7 +12,6 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: var(--space-l);
-    padding: var(--space-m);
 }
 
 

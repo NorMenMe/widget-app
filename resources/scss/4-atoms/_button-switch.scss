@@ -1,12 +1,28 @@
+@use '../2-tools/container-query' as *;
+@use '../2-tools/mixins' as *;
+
+
 .button-switch {
-    display: flex;
-    justify-content: flex-end;
+    text-align: center;
+    margin-block-start: var(--space-l);
+
+    @include container-query(dashboard, medium) {
+        text-align: end;
+        position: absolute;
+        top: 0;
+        right: var(--space-m);
+        margin-block-start: var(--space-m);
+    }
 }
 
 .button-switch__input {
     width: 100%;
     margin: 0;
     appearance: none;
+
+    &:focus-visible {
+        @include focus-visible;
+    }
 }
 
 .button-switch__label {
@@ -15,33 +31,14 @@
     grid-template-columns: 1fr;
     padding: 6px 10px;
     border: 1px solid var(--color-black);
-    border-radius: 3px;
+    border-radius: 4px;
     cursor: pointer;
+    color: var(--color-black);
+    background-color: var(--color-white);
 
     & > * {
         grid-row: 1 / 2;
         grid-column: 1 / 2;
     }
 }
-
-[for='input-switch-weather'] {
-    color: var(--color-black);
-    background-color: var(--color-white);
-
-    &:has(input:checked) {
-        color: var(--color-white);
-        background-color: var(--color-grey);
-    }
-}
-
-[for='input-switch-messenger'] {
-    color: var(--color-black);
-    background-color: var(--color-white);
-
-    &:has(input:checked) {
-        color: var(--color-white);
-        background-color: var(--color-grey);
-    }
-}
-
 

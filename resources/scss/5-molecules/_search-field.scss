@@ -5,16 +5,18 @@
     position: relative;
     border: 1.5px solid var((--color-black));
     border-radius: 3px;
-    font-size: fluid-unit(14, 16);
+    padding: 3px 5px;
 }
 
 .search-field__icon {
     position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
     height: 100%;
-    margin-inline-start: var(--space-s);
+    margin-inline-start: var(--space-xs);
     display: inline-flex;
+    color: var(--color-black-light);
 
     & > svg {
         width: 1em;
@@ -23,7 +25,14 @@
 
 .search-field__input {
     min-width: 100%;
-    padding-inline-start: var(--space-l);
+    padding-inline-start: var(--space-m);
+    position: relative;
+    z-index: 1;
+    top: 2px;
+
+    &::placeholder {
+        color: var(--color-black-light);
+    }
 }
 
 .search-field__input:focus-visible {

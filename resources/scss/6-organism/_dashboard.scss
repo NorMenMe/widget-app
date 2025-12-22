@@ -6,8 +6,7 @@
 }
 
 .dashboard__inner {
-    margin-inline: var(--space-m);
-    margin-block-start: var(--space-l);
+    margin: var(--space-m);
 
     @include container-query(dashboard, medium) {
         display: grid;
@@ -16,10 +15,19 @@
     }
 }
 
+.dashboard__main {
+    padding: var(--space-m);
+    border: 1px solid var(--color-black);
+    border-radius: 4px;
+}
+
 .dashboard__extra {
     background-color: var(--color-grey);
     border-radius: 12px;
     margin-block-start: var(--space-l);
+    padding: var(--space-m);
+    position: relative;
+
 
     @include container-query(dashboard, medium) {
         margin-block-start: revert;

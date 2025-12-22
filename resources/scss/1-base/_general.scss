@@ -27,10 +27,10 @@ html {
   --space-m: #{fluid-unit(16, 24)};
   --space-l: #{fluid-unit(24, 40)};
   --space-xl: #{fluid-unit(30, 48)};
-  --space-xxl: #{fluid-unit(42, 80)};
+  --space-xxl: #{fluid-unit(42, 96)};
   --space-xxxl: #{fluid-unit(80, 120)};
 
-  --space-s-l: #{fluid-unit(8, 40)};
+  --space-s-l: #{fluid-unit(8, 100)};
   --space-xl-xxxl: #{fluid-unit(30, 140)};
 
   --transition-duration: 200ms;
