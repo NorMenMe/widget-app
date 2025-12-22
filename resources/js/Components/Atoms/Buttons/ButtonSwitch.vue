@@ -1,7 +1,7 @@
 
 <template>
     <div class="button-switch">
-        <label for="input-switch-weather" class="button-switch__label">
+        <label v-if="internalValue === 'messenger'" for="input-switch-weather" class="button-switch__label">
             <input
                 type="radio"
                 id="input-switch-weather"
@@ -10,9 +10,9 @@
                 @change="handleChange('cards')"
                >
             </input>
-            <span>Weather Forecast</span>
+            <span>Switch to Weather Forecast</span>
         </label>
-        <label for="input-switch-messenger" class="button-switch__label">
+        <label v-if="internalValue === 'cards'" for="input-switch-messenger" class="button-switch__label">
             <input
                 type="radio"
                 id="input-switch-messenger"
@@ -21,7 +21,7 @@
                 @change="handleChange('messenger')"
             >
             </input>
-            <span>Messenger</span>
+            <span>Switch to Messenger</span>
         </label>
     </div>
 </template>

@@ -6,9 +6,9 @@
                 <teaser-dashboard :data="data"></teaser-dashboard>
             </div>
             <div class="dashboard__extra">
-                <button-switch v-model:internalValue="currentView"></button-switch>
                 <cards v-if="currentView === 'cards'" :data="data"></cards>
                 <messenger v-else-if="currentView === 'messenger'"></messenger>
+                <button-switch v-model:internalValue="currentView"></button-switch>
             </div>
         </div>
     </div>
