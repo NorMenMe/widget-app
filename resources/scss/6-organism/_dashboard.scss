@@ -7,8 +7,20 @@
 
 .dashboard__inner {
     margin: var(--space-m);
+}
+
+.dashboard__inner:has([for*="chat"]) {
 
     @include container-query(dashboard, medium) {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 20px;
+    }
+}
+
+.dashboard__inner:has([for*="weather"]) {
+
+    @include container-query(dashboard, large) {
         display: grid;
         grid-template-columns: 400px 1fr;
         gap: 20px;

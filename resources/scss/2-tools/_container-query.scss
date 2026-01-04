@@ -6,4 +6,9 @@
             @content;
         }
     }
+    @if $condition-size == large {
+        @container #{$container-name} (width >= 900px) {
+            @content;
+        }
+    }
 }
