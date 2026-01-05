@@ -17,3 +17,11 @@
   normal,
   400
 );
+
+// Roboto Bold // -----------------------------------------------------------
+@include font-face(
+  $font-name-base,
+  '../font/roboto/Roboto-Bold',
+  normal,
+  700
+);
