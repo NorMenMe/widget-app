@@ -34,6 +34,10 @@
 }
 
 .dashboard__extra {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-l);
     background-color: var(--color-grey);
     border-radius: 12px;
     margin-block-start: var(--space-l);
@@ -45,3 +49,4 @@
         margin-block-start: revert;
     }
 }
+

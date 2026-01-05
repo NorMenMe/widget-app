@@ -3,21 +3,19 @@
 
 .cards {
     @include container-query(dashboard, medium) {
-        margin-block-start: calc(2 * var(--space-xl));
+        margin-block-start: calc(var(--space-xxl) + 40px);
     }
 }
 
 .cards__inner {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     gap: var(--space-l);
 }
 
 
 .cards__heading {
     text-align: center;
-    margin-block-start: var(--space-m);
 
     @include container-query(dashboard, medium) {
         text-align: revert;

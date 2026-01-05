@@ -13,7 +13,7 @@
                 ></icon>
             </h2>
         </header>
-        <ul class="teaser-dashboard__list" role="list">
+        <ul class="teaser-dashboard__list">
             <li class="teaser-dashboard__item">
                 <span>Precipitation</span>
                 <span>{{ data.current.precip }}mm</span>
