@@ -4,7 +4,7 @@
             <h2 class="cards__heading">The upcoming week</h2>
             <ul class="cards__list">
                 <li class="cards__item" v-for="(day, key) in forecastDays" :key="key">
-                    <teaserCard :data="day"></teaserCard>
+                    <teaser-card :data="day"></teaser-card>
                 </li>
             </ul>
         </div>

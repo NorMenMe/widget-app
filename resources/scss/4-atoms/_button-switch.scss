@@ -4,15 +4,6 @@
 
 .button-switch {
     text-align: center;
-    margin-block-start: var(--space-l);
-
-    @include container-query(dashboard, medium) {
-        text-align: end;
-        position: absolute;
-        top: 0;
-        right: var(--space-m);
-        margin-block-start: var(--space-m);
-    }
 }
 
 .button-switch__input {
@@ -29,7 +20,7 @@
     display: inline-grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
-    padding: 6px 10px;
+    padding: 4px 6px;
     border: 1px solid var(--color-black);
     border-radius: 4px;
     cursor: pointer;

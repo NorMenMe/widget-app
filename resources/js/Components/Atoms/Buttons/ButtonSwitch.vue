@@ -1,7 +1,7 @@
 
 <template>
     <div class="button-switch">
-        <label v-if="internalValue === 'messenger'" for="input-switch-weather" class="button-switch__label">
+        <label v-if="internalValue === 'chat'" for="input-switch-weather" class="button-switch__label">
             <input
                 type="radio"
                 id="input-switch-weather"
@@ -12,16 +12,16 @@
             </input>
             <span>Switch to Weather Forecast</span>
         </label>
-        <label v-if="internalValue === 'cards'" for="input-switch-messenger" class="button-switch__label">
+        <label v-if="internalValue === 'cards'" for="input-switch-chat" class="button-switch__label">
             <input
                 type="radio"
-                id="input-switch-messenger"
+                id="input-switch-chat"
                 class="button-switch__input"
-                :checked="internalValue === 'messenger'"
-                @change="handleChange('messenger')"
+                :checked="internalValue === 'chat'"
+                @change="handleChange('chat')"
             >
             </input>
-            <span>Switch to Messenger</span>
+            <span>Switch to Chat</span>
         </label>
     </div>
 </template>
