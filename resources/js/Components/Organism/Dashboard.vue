@@ -7,7 +7,7 @@
             </div>
             <div class="dashboard__extra">
                 <cards v-if="currentView === 'cards'" :data="data"></cards>
-                <messenger v-else-if="currentView === 'messenger'"></messenger>
+                <chat v-else-if="currentView === 'chat'"></chat>
                 <button-switch v-model:internalValue="currentView"></button-switch>
             </div>
         </div>
@@ -20,13 +20,13 @@
     import SearchField from '@/Components/Molecules/SearchField.vue';
     import TeaserDashboard from '@/Components/Molecules/TeaserDashboard.vue';
     import Cards from '@/Components/Molecules/Cards.vue';
-    import Messenger from '@/Components/Molecules/Messenger.vue';
+    import Chat from '@/Components/Molecules/Chat.vue';
 
     defineProps({
         data: Object,
         apiError: String
     });
 
-    const currentView = ref('cards');
+    const currentView = ref('chat');
 </script>
 

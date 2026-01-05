@@ -488,9 +488,44 @@ const items = {
 	},
 };
 
+const chatItems = {
+  items: [
+    {
+      id: 1,
+      image: "https://placebear.com/g/100/100",
+      name: "Moe Blue",
+      copy:
+        "Meditation chicharrones iceland, tattooed cornhole tilde forage readymade blog woke bodega boys venmo semiotics fit viral.",
+    },
+    {
+      id: 2,
+      image: "https://placebear.com/100/100",
+      name: "Lena Frost",
+      copy:
+        "Dreamcatcher truffaut kale chips, waistcoat squid four dollar toast leggings meggings vegan fashion axe polaroid.",
+    },
+    {
+      id: 3,
+      image: "https://placebear.com/100/100",
+      name: "Caleb Stone",
+      copy:
+        "Chambray pabst echo park, you probably haven't heard of them locavore before they sold out crucifix.",
+    },
+    {
+      id: 4,
+      image: "https://placebear.com/g/100/100",
+      name: "Aria Moon",
+      copy:
+        "Cold-pressed street art banjo, pinterest activated charcoal aesthetic shoreditch irony brunch narwhal.",
+    }
+  ]
+};
+
 export function useForecastDays() {
 	return Object.entries(items.forecast).map(([key, value]) => ({
 		id: key,
 		...value,
 	}));
 }
+
+export { chatItems };

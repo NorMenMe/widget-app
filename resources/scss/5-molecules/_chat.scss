@@ -1,0 +1,37 @@
+@use '../2-tools/container-query' as *;
+@use '../2-tools/fluid-unit' as *;
+
+.chat {
+    @include container-query(dashboard, medium) {
+        margin-block-start: calc(var(--space-xxl) + 40px); // magic number: alignment with dashboard's heading
+    }
+}
+
+.chat__inner {
+    container: chat / inline-size;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-l);
+}
+
+.chat__heading {
+    text-align: center;
+
+    @include container-query(dashboard, large) {
+       text-align: start;
+    }
+}
+
+.chat__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-m);
+}
+
+.chat__button {
+    max-width: fit-content;
+    border: 1px solid var(--color-black);
+    border-radius: 4px;
+    justify-self: flex-end;
+    padding: 4px 6px;
+}
