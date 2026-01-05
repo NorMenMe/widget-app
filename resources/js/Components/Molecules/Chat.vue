@@ -4,7 +4,8 @@
             <h2 class="chat__heading">Your Chats</h2>
             <ul class="chat__list">
                 <li class="chat__item" v-for="item in chatItems.items" :key="item.id">
-                    <teaser-chat :item="item" :force-read="isAllRead"></teaser-chat>
+                    <teaser-chat :item="item" :force-read="isAllRead" @handle-unread="markAllAsUnread"
+                    ></teaser-chat>
                 </li>
             </ul>
             <button class="chat__button" type="button" @click="markAllAsRead">
@@ -19,12 +20,16 @@ import TeaserChat from "./TeaserChat.vue";
 import { chatItems } from '@/Components/Helpers/helpers.data-hardcoded';
 import { ref } from 'vue';
 
-
 const isAllRead = ref(false);
 
 function markAllAsRead() {
-    isAllRead.value = true;
+    if (!isAllRead.value) {
+        isAllRead.value = true;
+    }
 }
 
+function markAllAsUnread() {
+    isAllRead.value = false;
+}
 </script>
 

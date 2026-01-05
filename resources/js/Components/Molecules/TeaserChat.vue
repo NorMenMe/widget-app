@@ -32,16 +32,17 @@ const props = defineProps({
 	},
 });
 
+const emit = defineEmits(['handleUnread'])
+
 function toggleRead() {
-    if (isRead.value) {
-        isRead.value = false
-        buttonText = ''
-    } else {
-        isRead.value = true;
+    isRead.value = !isRead.value;
+
+    if (!isRead.value) {
+        emit('handleUnread')
     }
 }
 
-watch(() => props.forceRead, (newValue) => {
+watch(() => props.forceRead, () => {
     if (props.forceRead) {
         isRead.value = true;
     }
