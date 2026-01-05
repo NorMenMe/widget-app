@@ -1,4 +1,5 @@
 @use '../2-tools/fluid-unit' as *;
+@use '../2-tools/mixins' as *;
 @use '../2-tools/container-query' as *;
 @use '../0-abstracts/typography' as *;
 
@@ -37,6 +38,9 @@
     margin-inline-start: auto;
     flex-shrink: 0;
 
+    &:focus-visible {
+        @include focus-visible;
+    }
 
     &::before {
         content: '';
@@ -45,8 +49,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        width: 8px;
-        height: 8px;
+        width: fluid-unit(8, 12);
+        height: fluid-unit(8, 12);
         background-color: var(--color-black);
     }
 }

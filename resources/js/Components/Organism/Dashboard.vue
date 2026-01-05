@@ -27,6 +27,6 @@
         apiError: String
     });
 
-    const currentView = ref('chat');
+    const currentView = ref('cards');
 </script>
 

@@ -1,7 +1,10 @@
 <template>
     <section class="cards">
         <div class="cards__inner">
-            <h2 class="cards__heading">The upcoming week</h2>
+            <header class="cards__header flow-xs">
+                <h2>The upcoming week</h2>
+                <h3>Click on the card to see the temperature.</h3>
+            </header>
             <ul class="cards__list">
                 <li class="cards__item" v-for="(day, key) in forecastDays" :key="key">
                     <teaser-card :data="day"></teaser-card>
