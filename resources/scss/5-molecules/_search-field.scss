@@ -17,10 +17,7 @@
     margin-inline-start: var(--space-xs);
     display: inline-flex;
     color: var(--color-black-light);
-
-    & > svg {
-        width: 1em;
-    }
+    width: 1em;
 }
 
 .search-field__input {

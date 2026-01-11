@@ -2,7 +2,7 @@
     <div class="teaser-card">
         <article class="teaser-card__article">
             <div class="front flow-s">
-                <h4>{{ getDay }}</h4>
+                <h3>{{ getDay }}</h3>
                 <icon
                     class="teaser-card__icon"
                     :name="currentIcon"
