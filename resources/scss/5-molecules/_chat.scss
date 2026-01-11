@@ -16,9 +16,11 @@
 
 .chat__heading {
     text-align: center;
+    margin-block-start: calc(var(--space-l));
 
     @include container-query(dashboard, large) {
        text-align: start;
+        margin-block-start: 0;
     }
 }
 
@@ -29,9 +31,19 @@
 }
 
 .chat__button {
+    display: block;
     max-width: fit-content;
     border: 1px solid var(--color-black);
     border-radius: 4px;
-    justify-self: flex-end;
+    margin-block-start: var(--space-m);
+    margin-inline-start: auto;
     padding: 4px 6px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 400ms ease-in;
+
+    &.is-hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
 }
