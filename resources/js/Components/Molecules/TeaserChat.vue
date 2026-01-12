@@ -16,10 +16,9 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import Icon from '@/Components/Atoms/Icon.vue';
-
-const isRead = ref(false);
+import { store } from '@/Store/store';
 
 const props = defineProps({
 	item: {
@@ -32,6 +31,8 @@ const props = defineProps({
 	},
 });
 
+const isRead = ref(store.teaserChatItems[props.item.id]?.isRead || false);
+
 const emit = defineEmits(['handleUnread'])
 
 function toggleRead() {
@@ -41,6 +42,13 @@ function toggleRead() {
         emit('handleUnread')
     }
 }
+
+watch(isRead, (newValue) => {
+    const storeItem = store.teaserChatItems[props.item.id];
+    if (storeItem) {
+        storeItem.isRead = newValue;
+    }
+});
 
 watch(() => props.forceRead, () => {
     if (props.forceRead) {

@@ -4,8 +4,12 @@
             <h2 class="chat__heading">Your Chats</h2>
             <div class="chat__content">
                 <ul class="chat__list">
-                    <li class="chat__item" v-for="item in chatItems.items" :key="item.id">
-                        <teaser-chat :item="item" :force-read="isAllRead" @handle-unread="markAllAsUnread">
+                    <li class="chat__item" v-for="item in chatItems.items" >
+                        <teaser-chat
+                            :item="item"
+                            :force-read="isAllRead"
+                            @handle-unread="markAllAsUnread"
+                            >
                         </teaser-chat>
                     </li>
                 </ul>
@@ -18,9 +22,10 @@
 </template>
 
 <script setup>
-import TeaserChat from "./TeaserChat.vue";
+import { ref, onMounted } from 'vue';
 import { chatItems } from '@/Components/Helpers/helpers.data-hardcoded';
-import { ref } from 'vue';
+import { store } from '@/Store/store';
+import TeaserChat from "./TeaserChat.vue";
 
 const isAllRead = ref(false);
 const isHidden = ref(false);
@@ -36,5 +41,7 @@ function markAllAsUnread() {
     isAllRead.value = false;
     isHidden.value = false;
 }
+
+onMounted(() => store.generateChatItems());
 </script>
 

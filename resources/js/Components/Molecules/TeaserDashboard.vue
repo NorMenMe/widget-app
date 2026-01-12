@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { toRefs, computed } from "vue";
+import { toRefs } from "vue";
 import Icon from "@/Components/Atoms/Icon.vue";
 import { useCurrentIcon } from "@/Components/Helpers/helpers.icon";
 
