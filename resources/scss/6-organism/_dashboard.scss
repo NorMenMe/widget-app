@@ -45,7 +45,7 @@
     position: relative;
 
 
-    @include container-query(dashboard, medium) {
+    @include container-query(dashboard, large) {
         margin-block-start: revert;
     }
 }

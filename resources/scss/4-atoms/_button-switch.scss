@@ -33,3 +33,8 @@
     }
 }
 
+.button-switch__label span {
+    height: 24px; // magic number: align the height with native <button>'s
+    align-content: center;
+}
+
