@@ -34,7 +34,7 @@ const svgContent = ref('');
 
 const loadIcon = async (iconName) => {
   try {
-   const icons = import.meta.glob('../../images/icons/*.svg', { as: 'raw', eager: false });
+   const icons = import.meta.glob('../../Images/icons/*.svg', { as: 'raw', eager: false });
 
     const iconKey = Object.keys(icons).find(key =>
       key.endsWith(`/${iconName}.svg`)
