@@ -8,13 +8,18 @@
                         <teaser-chat
                             :item="item"
                             :force-read="isAllRead"
-                            @handle-unread="markAllAsUnread"
+                            @toggle-read="markAllAsUnread"
                             >
                         </teaser-chat>
                     </li>
                 </ul>
-                <button class="chat__button" :class="{'is-hidden' : isHidden}" type="button" @click="markAllAsRead">
-                    <span>Mark all as read</span>
+                <button
+                    class="chat__button"
+                    :class="{'is-hidden' : isAllRead}"
+                    type="button"
+                    @click="markAllAsRead">
+                        <span class="sr-only">Mark all as read</span>
+                        <span>Mark all as read</span>
                 </button>
             </div>
         </div>
@@ -27,21 +32,19 @@ import { chatItems } from '@/Components/Helpers/helpers.data-hardcoded';
 import { store } from '@/Store/store';
 import TeaserChat from "./TeaserChat.vue";
 
-const isAllRead = ref(false);
-const isHidden = ref(false);
+const isAllRead = ref(store.isAllChatRead || false);
+
+function markAllAsUnread() {
+    isAllRead.value = false;
+    store.isAllChatRead = false;
+}
 
 function markAllAsRead() {
     if (!isAllRead.value) {
         isAllRead.value = true;
-        isHidden.value = true;
+        store.isAllChatRead = true
     }
 }
 
-function markAllAsUnread() {
-    isAllRead.value = false;
-    isHidden.value = false;
-}
-
-onMounted(() => store.generateChatItems());
+onMounted(() => store.initializeChatItems());
 </script>
-

@@ -10,13 +10,14 @@
         <button
             class="teaser-chat__button"
             @click="toggleRead">
+            <span class="sr-only">Mark as {{isRead ? 'unread' : 'read'}}</span>
             <icon class="teaser-chat__icon" name="unread"></icon>
         </button>
     </section>
 </template>
 
 <script setup>
-import { ref, watch, computed } from 'vue';
+import { ref, watch } from 'vue';
 import Icon from '@/Components/Atoms/Icon.vue';
 import { store } from '@/Store/store';
 
@@ -33,13 +34,13 @@ const props = defineProps({
 
 const isRead = ref(store.teaserChatItems[props.item.id]?.isRead || false);
 
-const emit = defineEmits(['handleUnread'])
+const emit = defineEmits(['toggleRead'])
 
 function toggleRead() {
     isRead.value = !isRead.value;
 
     if (!isRead.value) {
-        emit('handleUnread')
+        emit('toggleRead')
     }
 }
 
