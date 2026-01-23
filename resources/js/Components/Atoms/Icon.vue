@@ -31,7 +31,7 @@ const svgContent = ref('');
 
 // Pre-import all icons as raw strings for working well on dev & production environment
 const iconModules = import.meta.glob('@/Images/icons/*.svg', {
-  as: '?raw',
+  as: 'raw',
   eager: true
 });
 
