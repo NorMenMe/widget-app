@@ -492,14 +492,14 @@ const chatItems = {
   items: [
     {
       id: 0,
-      image: "https://placebear.com/g/100/100",
+      image: "https://placebear.com/100/100",
       name: "Moe Blue",
       copy:
         "Meditation chicharrones iceland, tattooed cornhole tilde forage readymade blog woke bodega boys venmo semiotics fit viral.",
     },
     {
       id: 1,
-      image: "https://placebear.com/100/100",
+      image: "https://placebear.com/g/100/100",
       name: "Lena Frost",
       copy:
         "Dreamcatcher truffaut kale chips, waistcoat squid four dollar toast leggings meggings vegan fashion axe polaroid.",
