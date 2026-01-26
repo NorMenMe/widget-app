@@ -3,7 +3,7 @@
 
 .search-field {
     position: relative;
-    border: 1.5px solid var((--color-black));
+    border: 1.5px solid var((--color-black-50));
     border-radius: 3px;
     padding: 3px 5px;
 }
@@ -16,7 +16,7 @@
     height: 100%;
     margin-inline-start: var(--space-xs);
     display: inline-flex;
-    color: var(--color-black-light);
+    color: var(--color-black-50);
     width: 1em;
 }
 
@@ -28,7 +28,7 @@
     top: 2px;
 
     &::placeholder {
-        color: var(--color-black-light);
+        color: var(--color-black-50);
     }
 }
 

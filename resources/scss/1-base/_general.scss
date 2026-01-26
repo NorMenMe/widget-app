@@ -14,9 +14,9 @@ html {
     --color-#{$color-name}-hsl: #{$color-hsl};
   }
 
-  --color-text: var(--color-black);
-  --color-text-inverse: var(--color-white);
-  --color-focus-visible: var(--color-orange);
+  --color-text: var(--color-black-50);
+  --color-text-inverse: var(--color-white-50);
+  --color-focus-visible: var(--color-50);
 
   --text-underline-thickness: 0.05em;
   --text-underline-active-thickness: 0.1em;
@@ -46,6 +46,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-family-base;
-  background-color: var(--color-gray);
+  background-color: var(--color-gray-50);
 }
 

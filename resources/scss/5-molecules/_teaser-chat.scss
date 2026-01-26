@@ -37,7 +37,7 @@
     padding: 0;
     margin-inline-start: auto;
     flex-shrink: 0;
-    color: var(--color-orange);
+    color: var(--color-orange-50);
 
     &:focus-visible {
         @include focus-visible;
@@ -66,5 +66,5 @@
 
 .is-read .teaser-chat__icon {
     display: block;
-    color: var(--color-black);
+    color: var(--color-black-50);
 }

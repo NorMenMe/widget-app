@@ -2,6 +2,6 @@
 
 .button {
   @include hover {
-        background-color: var(--color-blue-light);
+        background-color: var(--color-blue-50);
     };
 }

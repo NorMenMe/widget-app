@@ -33,18 +33,18 @@
 
 .chat__item {
     padding: var(--space-s);
-    background-color: var(--color-blue-light);
+    background-color: var(--color-blue-50);
     border-radius: 4px;
 }
 
 .chat__item:has(.is-read) {
-    background-color: var(--color-blue);
+    background-color: var(--color-blue-100);
 }
 
 .chat__button {
     display: block;
     max-width: fit-content;
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-black-50);
     border-radius: 4px;
     margin-block-start: var(--space-m);
     margin-inline-start: auto;
@@ -52,7 +52,7 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 400ms ease-in;
-    background-color: var(--color-white);
+    background-color: var(--color-white-50);
 
     &.is-hidden {
         visibility: hidden;

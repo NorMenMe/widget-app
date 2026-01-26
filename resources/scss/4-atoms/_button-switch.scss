@@ -3,15 +3,15 @@
 
 .button-switch {
     align-self: center;
-    background-color: var(--color-white);
+    background-color: var(--color-white-50);
     border-radius: 4px;
 }
 
 .button-switch__button {
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-black-50);
     border-radius: inherit;
     padding: 4px 6px;
-    background-color: var(--color-white);
+    background-color: var(--color-white-50);
 
     &:focus-visible {
         @include focus-visible;
