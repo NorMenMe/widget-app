@@ -16,10 +16,10 @@ class StartPageController extends Controller
 
            try {
             // Fetch weather data
-            $response = Http::timeout(10)->get('https://api.weatherstack.com/current', [
-                'access_key' => $apiKey,
-                'query' => $location
-            ]);
+            // $response = Http::timeout(10)->get('https://api.weatherstack.com/current', [
+            //     'access_key' => $apiKey,
+            //     'query' => $location
+            // ]);
 
             $data = $response->successful() ? $response->json() : [];
 
