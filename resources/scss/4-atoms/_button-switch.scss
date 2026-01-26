@@ -1,40 +1,20 @@
 @use '../2-tools/container-query' as *;
 @use '../2-tools/mixins' as *;
 
-
 .button-switch {
-    text-align: center;
+    align-self: center;
+    background-color: var(--color-white);
+    border-radius: 4px;
 }
 
-.button-switch__input {
-    width: 100%;
-    margin: 0;
-    appearance: none;
+.button-switch__button {
+    border: 1px solid var(--color-black);
+    border-radius: inherit;
+    padding: 4px 6px;
+    background-color: var(--color-white);
 
     &:focus-visible {
         @include focus-visible;
     }
-}
-
-.button-switch__label {
-    display: inline-grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    padding: 4px 6px;
-    border: 1px solid var(--color-black);
-    border-radius: 4px;
-    cursor: pointer;
-    color: var(--color-black);
-    background-color: var(--color-white);
-
-    & > * {
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-    }
-}
-
-.button-switch__label span {
-    height: 24px; // magic number: align the height with native <button>'s
-    align-content: center;
 }
 
