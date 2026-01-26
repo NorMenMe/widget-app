@@ -35,10 +35,21 @@ npm install
 Open the .env file and update it with your API Key
 
 ### 4. Local Development
-On terminal's tab 1:
+On terminal's tab 1, in the root folder, create the SQLite database file:
+```bash
+touch database/database.sqlite
+```
+
+In the root folder, run migrations to set up the database tables:
+```bash
+php artisan migrate
+```
+
+Run the server:
 ```bash
 php artisan serve
 ```
+
 
 On terminal's tab 2:
 ```bash
