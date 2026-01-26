@@ -14,7 +14,7 @@
                     </li>
                 </ul>
                 <button
-                    class="chat__button"
+                    class="chat__button button"
                     :class="{'is-hidden' : isAllRead}"
                     type="button"
                     @click="markAllAsRead">

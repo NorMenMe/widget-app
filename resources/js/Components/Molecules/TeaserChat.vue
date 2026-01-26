@@ -9,7 +9,8 @@
         </div>
         <button
             class="teaser-chat__button"
-            @click="toggleRead">
+            @click="toggleRead"
+            :title="isRead ? 'Mark as unread' : 'Mark as read'">
             <span class="sr-only">Mark as {{isRead ? 'unread' : 'read'}}</span>
             <icon class="teaser-chat__icon" name="unread"></icon>
         </button>
