@@ -4,7 +4,7 @@
 .button-switch {
     align-self: center;
     background-color: var(--color-white-50);
-    border-radius: 4px;
+    border-radius: var(--border-radius-xs);
 }
 
 .button-switch__button {

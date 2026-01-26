@@ -34,7 +34,7 @@
 .chat__item {
     padding: var(--space-s);
     background-color: var(--color-blue-50);
-    border-radius: 4px;
+    border-radius: var(--border-radius-xs);
 }
 
 .chat__item:has(.is-read) {
@@ -45,7 +45,7 @@
     display: block;
     max-width: fit-content;
     border: 1px solid var(--color-black-50);
-    border-radius: 4px;
+    border-radius: var(--border-radius-xs);
     margin-block-start: var(--space-m);
     margin-inline-start: auto;
     padding: 4px 6px;

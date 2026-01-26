@@ -8,19 +8,13 @@ html {
 }
 
 :root {
-
   @each $color-name, $color-hsl in $colors {
     --color-#{$color-name}: #{hsl(($color-hsl))};
     --color-#{$color-name}-hsl: #{$color-hsl};
   }
 
   --color-text: var(--color-black-50);
-  --color-text-inverse: var(--color-white-50);
-  --color-focus-visible: var(--color-50);
-
-  --text-underline-thickness: 0.05em;
-  --text-underline-active-thickness: 0.1em;
-  --text-underline-offset: 0.15em;
+  --color-focus-visible: var(--color-orange-50);
 
   --space-xs: #{fluid-unit(4, 8)};
   --space-s: #{fluid-unit(8, 16)};
@@ -33,13 +27,8 @@ html {
   --space-s-l: #{fluid-unit(8, 100)};
   --space-xl-xxxl: #{fluid-unit(30, 140)};
 
-  --transition-duration: 200ms;
-  --transition-timing-function: ease-in-out;
-
-  --border-radius-xs: #{fluid-unit(8, 12)};
-  --border-radius-s: #{fluid-unit(10, 18)};
-  --border-radius-m: #{fluid-unit(12, 24)};
-  --border-radius-l: #{fluid-unit(24, 42)};
+  --border-radius-xs: #{fluid-unit(4, 6)};
+  --border-radius-s: #{fluid-unit(8, 12)};
 }
 
 body {
