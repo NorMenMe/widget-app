@@ -1,7 +1,6 @@
 @use '../2-tools/container-query' as *;
 
 .teaser-card {
-    max-width: 150px;
     min-height: 180px;
     align-content: center;
     padding: 20px;
@@ -11,6 +10,7 @@
 
 .teaser-card__article {
     text-align: center;
+
     @include container-query(dashboard, medium) {
         display: grid;
 
@@ -25,7 +25,7 @@
         opacity: 1;
         transform: rotateY(0deg);
         transform-style: preserve-3d;
-        transition: transform 600ms ease, opacity 200ms ease;
+        transition: transform 600ms ease-in-out, opacity 200ms ease-in-out;
     }
 }
 
@@ -34,7 +34,7 @@
         opacity: 0;
         transform: rotateY(-180deg);
         align-content: center;
-        transition: transform 400ms ease, opacity 200ms ease;
+        transition: transform 400ms ease-in-out, opacity 200ms ease-in-out;
 
         & > p:first-child {
             margin: 0;

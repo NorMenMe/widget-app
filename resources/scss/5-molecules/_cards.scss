@@ -8,11 +8,6 @@
     }
 }
 
-.cards__inner {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
 .cards__heading {
     margin-block-start: calc(var(--space-l));
     text-align: center;
@@ -36,6 +31,6 @@
     justify-content: center;
 
     @include container-query(dashboard, medium) {
-        justify-content: revert;
+        justify-content: start;
     }
 }

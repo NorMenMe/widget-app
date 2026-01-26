@@ -9,15 +9,15 @@
 }
 
 .search-field__icon {
+    display: inline-flex;
+    width: 1em;
     position: absolute;
     z-index: 2;
     top: 0;
     left: 0;
     height: 100%;
     margin-inline-start: var(--space-xs);
-    display: inline-flex;
     color: var(--color-black-50);
-    width: 1em;
 }
 
 .search-field__input {
@@ -29,14 +29,11 @@
     background-color: var(--color-white-50); // overwrite iOS user agent styles
 
     &::placeholder {
+        font-size: inherit;
         color: var(--color-black-50);
     }
 }
 
 .search-field__input:focus-visible {
     @include focus-visible;
-}
-
-.search-field__input::placeholder  {
-    font-size: inherit
 }

@@ -10,17 +10,7 @@
     margin: var(--space-m);
 }
 
-.dashboard__inner:has([id*="chat"]) {
-
-    @include container-query(dashboard, medium) {
-        display: grid;
-        grid-template-columns: 400px 1fr;
-        gap: 20px;
-    }
-}
-
-.dashboard__inner:has([id*="cards"]) {
-
+.dashboard__inner {
     @include container-query(dashboard, large) {
         display: grid;
         grid-template-columns: 400px 1fr;
@@ -41,21 +31,12 @@
     flex-direction: column;
     justify-content: space-between;
     gap: var(--space-l);
-    background-color: var(--color-grey);
-    border-radius: var(--border-radius-s);
     margin-block-start: var(--space-l);
     padding: var(--space-m);
-    position: relative;
+    border-radius: var(--border-radius-s);
     background-color: var(--color-blue-100);
 
     @include container-query(dashboard, large) {
-        margin-block-start: revert;
+        margin-block-start: 0;
     }
 }
-
-.dashboard__extra:has([id*="chat"]) {
-    @include container-query(dashboard, medium) {
-        margin-block-start: revert;
-    }
-}
-

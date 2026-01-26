@@ -12,7 +12,7 @@
 .teaser-chat__image {
     width: var(--space-xxl);
     flex-shrink: 0;
-    align-self: self-start;
+    align-self: start;
 
     & img {
         border-radius: 50%;
@@ -31,9 +31,9 @@
 .teaser-chat__button {
     width: 20px;
     height: 20px;
+    position: relative;
     border: none;
     background-color: transparent;
-    position: relative;
     padding: 0;
     margin-inline-start: auto;
     flex-shrink: 0;
@@ -42,29 +42,29 @@
     &:focus-visible {
         @include focus-visible;
     }
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        width: fluid-unit(8, 12);
-        height: fluid-unit(8, 12);
-        background-color: currentColor;
-    }
 }
 
-.is-read .teaser-chat__button::before {
-    display: none;
+.teaser-chat__button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    width: fluid-unit(8, 12);
+    height: fluid-unit(8, 12);
+    background-color: currentColor;
+
+    .is-read & {
+        display: none;
+    }
 }
 
 .teaser-chat__icon {
     display: none;
-}
 
-.is-read .teaser-chat__icon {
-    display: block;
-    color: var(--color-black-50);
+    .is-read & {
+        display: block;
+        color: var(--color-black-50);
+    }
 }
