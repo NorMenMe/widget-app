@@ -510,13 +510,6 @@ const chatItems = {
       name: "Caleb Stone",
       copy:
         "Chambray pabst echo park, you probably haven't heard of them locavore before they sold out crucifix.",
-    },
-    {
-      id: 3,
-      image: "https://placebear.com/g/100/100",
-      name: "Aria Moon",
-      copy:
-        "Cold-pressed street art banjo, pinterest activated charcoal aesthetic shoreditch irony brunch narwhal.",
     }
   ]
 };

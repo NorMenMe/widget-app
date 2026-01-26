@@ -4,3 +4,11 @@
     outline: 2.5px solid var(--color-focus-visible);
     border-radius: inherit;
 }
+
+@mixin hover() {
+    &:hover {
+        @media (hover: hover) and (pointer: fine) {
+            @content;
+        }
+    }
+}
