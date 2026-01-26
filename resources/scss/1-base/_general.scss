@@ -16,7 +16,7 @@ html {
 
   --color-text: var(--color-black);
   --color-text-inverse: var(--color-white);
-  --color-focus-visible: var(--color-coral);
+  --color-focus-visible: var(--color-orange);
 
   --text-underline-thickness: 0.05em;
   --text-underline-active-thickness: 0.1em;
@@ -46,5 +46,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-family-base;
+  background-color: var(--color-gray);
 }
 

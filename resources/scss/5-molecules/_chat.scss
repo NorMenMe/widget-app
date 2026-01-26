@@ -1,4 +1,5 @@
 @use '../2-tools/container-query' as *;
+@use '../0-abstracts/colors' as *;
 @use '../2-tools/fluid-unit' as *;
 
 .chat {
@@ -30,6 +31,16 @@
     gap: var(--space-m);
 }
 
+.chat__item {
+    padding: var(--space-s);
+    background-color: var(--color-blue-light);
+    border-radius: 4px;
+}
+
+.chat__item:has(.is-read) {
+    background-color: var(--color-blue);
+}
+
 .chat__button {
     display: block;
     max-width: fit-content;
@@ -41,6 +52,7 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 400ms ease-in;
+    background-color: var(--color-white);
 
     &.is-hidden {
         visibility: hidden;

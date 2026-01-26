@@ -37,6 +37,7 @@
     padding: 0;
     margin-inline-start: auto;
     flex-shrink: 0;
+    color: var(--color-orange);
 
     &:focus-visible {
         @include focus-visible;
@@ -51,7 +52,7 @@
         border-radius: 50%;
         width: fluid-unit(8, 12);
         height: fluid-unit(8, 12);
-        background-color: var(--color-black);
+        background-color: currentColor;
     }
 }
 
@@ -65,4 +66,5 @@
 
 .is-read .teaser-chat__icon {
     display: block;
+    color: var(--color-black);
 }
