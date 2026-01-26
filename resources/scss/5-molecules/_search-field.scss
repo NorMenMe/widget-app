@@ -26,6 +26,7 @@
     position: relative;
     z-index: 1;
     top: 2px;
+    background-color: var(--color-white-50); // overwrite iOS user agent styles
 
     &::placeholder {
         color: var(--color-black-50);
