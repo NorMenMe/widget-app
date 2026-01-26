@@ -2,17 +2,6 @@
 @use '../0-abstracts/typography' as *;
 @use '../2-tools/fluid-unit' as *;
 
-@keyframes bounce {
-	0%,
-    20%,
-    50%,
-    80%,
-    100% {transform: translateY(0);}
-
-	40% {transform: translateY(-8px);}
-	60% {transform: translateY(-4px);}
-}
-
 .cards {
     @include container-query(dashboard, medium) {
         margin-block-start: calc(var(--space-xxl) + 40px); // magic number: alignment with dashboard's heading
@@ -26,9 +15,11 @@
 
 .cards__heading {
     margin-block-start: calc(var(--space-l));
+    text-align: center;
 
     @include container-query(dashboard, medium) {
         margin-block-start: 0;
+        text-align: start;
     }
 }
 
@@ -36,21 +27,6 @@
     margin-block-start: calc(var(--space-m));
     display: grid;
     gap: var(--space-s);
-}
-
-.cards__copy {
-    font-size: fluid-unit(14, 16);
-    display: flex;
-    gap: var(--space-xs);
-
-    @include container-query(dashboard, large) {
-        display: none;
-    }
-}
-
-.cards__icon {
-    width: 1em;
-    animation: bounce 3000ms ease-in-out infinite;
 }
 
 .cards__list {
