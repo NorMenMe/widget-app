@@ -48,6 +48,12 @@
     position: relative;
     background-color: var(--color-blue-100);
 
+    @include container-query(dashboard, large) {
+        margin-block-start: revert;
+    }
+}
+
+.dashboard__extra:has([id*="chat"]) {
     @include container-query(dashboard, medium) {
         margin-block-start: revert;
     }
