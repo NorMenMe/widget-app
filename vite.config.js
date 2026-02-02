@@ -6,6 +6,9 @@ import svgLoader from 'vite-svg-loader';
 
 export default defineConfig({
     plugins: [
+        svgLoader({
+         defaultImport: 'component',
+        }),
         laravel({
             input: ['resources/scss/app.scss', 'resources/js/app.js'],
             refresh: true,
@@ -17,9 +20,6 @@ export default defineConfig({
                     includeAbsolute: false,
                 },
             },
-        }),
-        svgLoader({
-         defaultImport: 'component',
         }),
     ],
     resolve: {
