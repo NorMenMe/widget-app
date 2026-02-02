@@ -1,7 +1,7 @@
 <template>
-  <img :src="MyIcon" alt="Sun icon" />
+    <MyIcon />
 </template>
 
 <script setup>
-import MyIcon from '@/images/icons/sun.svg'
+    import MyIcon from '@/images/icons/sun.svg'
 </script>
