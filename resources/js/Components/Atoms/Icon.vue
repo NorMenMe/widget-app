@@ -1,7 +1,7 @@
 <template>
-  <div v-html="MyIcon"></div>
+  <img :src="MyIcon" alt="Sun icon" />
 </template>
 
 <script setup>
-    import MyIcon from '@/Images/icons/sun.svg?raw'
+import MyIcon from '@/Images/icons/sun.svg'
 </script>
