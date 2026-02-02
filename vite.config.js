@@ -22,8 +22,5 @@ export default defineConfig({
     alias: {
         '@': path.resolve(__dirname, './resources/js'),
     },
-    build : {
-        assetsInlineLimit: 0,
-    }
 },
 });
