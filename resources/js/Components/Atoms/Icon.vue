@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-import MyIcon from '@/Images/icons/sun.svg'
+import MyIcon from '@/images/icons/sun.svg'
 </script>
