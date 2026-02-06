@@ -7,7 +7,7 @@
             </h1>
             <h2>
                 <span>Today</span>
-                <icon></icon>
+                <icon class="teaser-dashboard__icon" :name="currentIcon"></icon>
             </h2>
         </header>
         <ul class="teaser-dashboard__list">
