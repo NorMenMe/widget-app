@@ -1,7 +1,7 @@
 # Widget App Project
 
-This application is built with [Laravel](https://laravel.com) and [Vite](https://vitejs.dev/).
-
+This application is built with [Laravel](https://laravel.com) and [Vite](https://vitejs.dev/): 
+* [Widget App](https://widget-app-main-pzbdmy.laravel.cloud/)
 ---
 
 ## 🛠 Prerequisites
