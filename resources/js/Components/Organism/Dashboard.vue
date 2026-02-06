@@ -5,6 +5,11 @@
                 <search-field></search-field>
                 <teaser-dashboard :data="data"></teaser-dashboard>
             </div>
+            <div class="dashboard__extra">
+                <cards v-if="currentView === 'cards'"></cards>
+                <chat v-else-if="currentView === 'chat'"></chat>
+                <button-switch v-model:internalValue="currentView"></button-switch>
+            </div>
         </div>
     </div>
 </template>
