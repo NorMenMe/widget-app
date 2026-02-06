@@ -1,8 +1,10 @@
 export function useCurrentIcon(data) {
-	const WEATHER_ICONS = ["sun", "cloud", "rain"];
+    const WEATHER_ICONS = ["sun", "cloud", "rain"];
 	let stringSearch = null;
 
+	console.log("---- ~ data:", data.value)
 	if (data.value.current) {
+        console.log('if');
 		stringSearch = data?.value?.current?.weather_descriptions
 			.join(" ")
 			.toLowerCase();
