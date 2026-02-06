@@ -12,7 +12,7 @@ class StartPageController extends Controller
     public function index(Request $request)
     {
         $location = $request->input('query', 'Berlin');
-        $apiKey = env('WEATHERSTACK_API_KEY');
+        $apiKey = 'c0ecdeef38275e0a5e00be57df784214';
 
            try {
             // Fetch weather data
