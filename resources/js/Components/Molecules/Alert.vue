@@ -1,32 +1,43 @@
 <template>
-  <div role="alert" :class="`alert ${alertType}`">
-    <span><slot></slot></span>
-    <button @click="close">
-        ⅹ
-        <span class="sr-only">close button</span>
-    </button>
-  </div>
+    <div
+        v-if="!isClosed"
+        role="alert"
+        :class="`alert ${alert.className}`"
+        :type="alert.type"
+        :key="alert.message"
+        >
+        <span>
+            {{ alert.message }}
+        </span>
+        <button @click="handleClose" type="button">
+            ⅹ
+            <span class="sr-only">close button</span>
+        </button>
+    </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref } from 'vue'
 
 const props = defineProps({
-  type: {
-    type: String,
-    default: 'info'
+    apiMessage : {
+        type: String,
+        default: null,
     }
 })
 
-const alertType = computed(() => {
-  return {
-    error: 'alert-error',
-  }[props.type]
-})
+const alert = ref(
+    {
+        type: 'error',
+        message: props.apiMessage,
+        className: 'alert--api-error'
+    },
+);
 
-const emit = defineEmits(['closed'])
+const isClosed = ref(false)
 
-const close = () => {
-  emit('closed')
+const handleClose = () => {
+    isClosed.value = true;
 }
 </script>
+
