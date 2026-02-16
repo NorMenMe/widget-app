@@ -1,0 +1,66 @@
+@use '../2-tools/fluid-unit' as *;
+@use '../2-tools/container-query' as *;
+
+.alert {
+    border: 1px solid #000;
+    border-radius: var(--border-radius-xs);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    min-width: fluid-unit(280, 800);
+    height: max-content;
+    background-color: var(--color-blue-50);
+    container-type: inline-size;
+    container-name: alert;
+}
+
+.alert__inner {
+    padding: var(--space-m);
+}
+
+.alert__button {
+    display: block;
+    margin-inline-start: auto;
+}
+
+.icon--close {
+    width: fluid-unit(18, 38);
+    height: fluid-unit(22, 40);
+}
+
+.alert__content {
+    margin-block-start: var(--space-s);
+    display: grid;
+    gap: var(--space-xs);
+
+    @include container-query(alert, small) {
+        grid-template-columns: max-content 1fr;
+        gap: var(--space-s);
+    }
+}
+
+.alert__copy {
+    font-size: fluid-unit(18, 24);
+}
+
+.icon--info {
+    width: fluid-unit(16, 22);
+    height: fluid-unit(16, 22);
+
+    @include container-query(alert, small) {
+        position: relative;
+        top: 6px;
+    }
+}
+
+// vue shipped classes with <transition>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}

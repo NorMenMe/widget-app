@@ -75,6 +75,9 @@ picture {
 input,
 button {
     cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    border: none;
 }
 
 /* Inherit fonts for inputs and buttons */

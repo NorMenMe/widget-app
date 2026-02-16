@@ -1,23 +1,32 @@
 <template>
-    <div
-        v-if="!isClosed"
-        role="alert"
-        :class="`alert ${alert.className}`"
-        :type="alert.type"
-        :key="alert.message"
-        >
-        <span>
-            {{ alert.message }}
-        </span>
-        <button @click="handleClose" type="button">
-            ⅹ
-            <span class="sr-only">close button</span>
-        </button>
-    </div>
+    <transition name="fade">
+        <div
+            v-if="!isClosed"
+            :class="`alert ${alert.className}`"
+            role="alert"
+            :type="alert.type"
+            :key="alert.message"
+            >
+            <div class="alert__inner">
+                <button class="alert__button" @click="handleClose" type="button">
+                    <icon class="alert__icon icon--close" name="close"></icon>
+                    <span class="sr-only">close button</span>
+                </button>
+                <div class="alert__content">
+                    <icon class="alert__icon icon--info" name="info"></icon>
+                    <p class="alert__copy">
+                        {{ alert.message }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </transition>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import Icon from '@/Components/Atoms/Icon.vue';
+
 
 const props = defineProps({
     apiMessage : {
