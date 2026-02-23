@@ -6,6 +6,7 @@
             role="alert"
             :type="alert.type"
             :key="alert.message"
+            v-click-outside="handleClickOutside"
             >
             <div class="alert__inner">
                 <div class="alert__content">
@@ -27,7 +28,6 @@
 import { ref } from 'vue';
 import Icon from '@/Components/Atoms/Icon.vue';
 
-
 const props = defineProps({
     apiMessage : {
         type: String,
@@ -48,5 +48,7 @@ const isClosed = ref(false)
 const handleClose = () => {
     isClosed.value = true;
 }
+
+const handleClickOutside = () => handleClose();
 </script>
 

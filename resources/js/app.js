@@ -5,6 +5,7 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import { vClickOutside } from '@/Utilitites/directive';
 import Icon from './Components/Atoms/Icon.vue';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
@@ -21,6 +22,7 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .component('Icon', Icon)
+            .directive('click-outside', vClickOutside)
             .mount(el);
     },
     progress: {
