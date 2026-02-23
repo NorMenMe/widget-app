@@ -31,7 +31,7 @@ class StartPageController extends Controller
 
             // fallback data for failed api request
             $data = $dummyData;
-            $apiError = 'Hello User, there is an issue with the API; you see currently hardcoded data as fallback';
+            $apiError = 'Hello User, there is an issue with the API: you see currently hardcoded data as fallback.';
             }
 
             return Inertia::render('StartPage', [

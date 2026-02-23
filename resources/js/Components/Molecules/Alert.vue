@@ -8,16 +8,16 @@
             :key="alert.message"
             >
             <div class="alert__inner">
-                <button class="alert__button" @click="handleClose" type="button">
-                    <icon class="alert__icon icon--close" name="close"></icon>
-                    <span class="sr-only">close button</span>
-                </button>
                 <div class="alert__content">
                     <icon class="alert__icon icon--info" name="info"></icon>
                     <p class="alert__copy">
                         {{ alert.message }}
                     </p>
                 </div>
+                <button class="alert__button" @click="handleClose" type="button">
+                    <icon class="alert__icon icon--close" name="close"></icon>
+                    <span class="sr-only">close button</span>
+                </button>
             </div>
         </div>
     </transition>

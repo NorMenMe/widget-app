@@ -17,26 +17,28 @@
 
 .alert__inner {
     padding: var(--space-m);
-}
-
-.alert__button {
-    display: block;
-    margin-inline-start: auto;
-}
-
-.icon--close {
-    width: fluid-unit(18, 38);
-    height: fluid-unit(22, 40);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: var(--space-s);
 }
 
 .alert__content {
-    margin-block-start: var(--space-s);
     display: grid;
     gap: var(--space-xs);
 
     @include container-query(alert, small) {
         grid-template-columns: max-content 1fr;
-        gap: var(--space-s);
+    }
+}
+
+.icon--info {
+    display: none;
+
+    @include container-query(alert, small) {
+        display: block;
+        width: fluid-unit(16, 26);
+        position: relative;
+        top: 3px;
     }
 }
 
@@ -44,14 +46,14 @@
     font-size: fluid-unit(18, 24);
 }
 
-.icon--info {
-    width: fluid-unit(16, 22);
-    height: fluid-unit(16, 22);
+.alert__button {
+    align-self: flex-start;
+}
 
-    @include container-query(alert, small) {
-        position: relative;
-        top: 6px;
-    }
+.icon--close {
+    width: fluid-unit(18, 26);
+    position: relative;
+    top: 3px;
 }
 
 // vue shipped classes with <transition>
