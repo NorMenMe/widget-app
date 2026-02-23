@@ -9,13 +9,13 @@
             >
             <div class="alert__inner">
                 <div class="alert__content">
-                    <icon class="alert__icon icon--info" name="info"></icon>
+                    <icon class="alert__icon alert__icon--info" name="info"></icon>
                     <p class="alert__copy">
                         {{ alert.message }}
                     </p>
                 </div>
                 <button class="alert__button" @click="handleClose" type="button">
-                    <icon class="alert__icon icon--close" name="close"></icon>
+                    <icon class="alert__icon alert__icon--close" name="close"></icon>
                     <span class="sr-only">close button</span>
                 </button>
             </div>
