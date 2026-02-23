@@ -11,8 +11,11 @@ class StartPageController extends Controller
 {
     public function index(Request $request)
     {
+        $data = [];
         $location = $request->input('query', 'Berlin');
         $apiKey = 'c0ecdeef38275e0a5e00be57df784214';
+        $apiError = null;
+        $dummyData = json_decode(file_get_contents(base_path('database/data/dummy.json')));
 
            try {
             // Fetch weather data
@@ -21,17 +24,20 @@ class StartPageController extends Controller
                 'query' => $location
             ]);
 
-            $data = $response->successful() ? $response->json() : [];
+            $data = $response->successful() ? $response->json() : $dummyData;
 
             } catch (\Exception $e) {
-            $data = [];
             \Log::error('API fetch failed: ' . $e->getMessage());
+
+            // fallback data for failed api request
+            $data = $dummyData;
+            $apiError = 'Hello User, there is an issue with the API: you see currently hardcoded data as fallback.';
             }
 
             return Inertia::render('StartPage', [
             'data' => $data,
             'currentLocation' => $location,
-            'apiError' => empty($data) ? 'Hello User, there is an issue with the API; here the hardcoded data as fallback' : null,
+            'apiError' => $apiError,
         ]);
     }
 }

@@ -24,7 +24,6 @@
 
     defineProps({
         data: Object,
-        apiError: String
     });
 
     const currentView = ref('cards');
