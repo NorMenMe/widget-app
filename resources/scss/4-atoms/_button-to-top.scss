@@ -1,0 +1,23 @@
+@use '../2-tools/fluid-unit' as *;
+
+.button-to-top {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity var(--transition-speed-m) ease-in-out;
+}
+
+.button-to-top.is-active {
+    position: fixed;
+    visibility: visible;
+    opacity: 1;
+    bottom: 10px;
+    right: fluid-unit(8, 20);
+    border-radius: 50%;
+    background-color: var(--color-white-50);
+    padding: 10px;
+}
+
+.button-to-top__icon {
+    width: fluid-unit(28, 32);
+}
+

@@ -1,5 +1,4 @@
 @use '../2-tools/fluid-unit' as *;
-@use '../2-tools/mixins' as *;
 
 .search-field {
     position: relative;
@@ -23,17 +22,11 @@
 .search-field__input {
     min-width: 100%;
     padding-inline-start: var(--space-m);
-    position: relative;
     z-index: 1;
-    top: 2px;
     background-color: var(--color-white-50); // overwrite iOS user agent styles
 
     &::placeholder {
         font-size: inherit;
         color: var(--color-black-50);
     }
-}
-
-.search-field__input:focus-visible {
-    @include focus-visible;
 }

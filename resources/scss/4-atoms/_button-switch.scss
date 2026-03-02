@@ -13,8 +13,8 @@
     padding: 4px 6px;
     background-color: var(--color-white-50);
 
-    &:focus-visible {
-        @include focus-visible;
-    }
+    @include hover {
+        background-color: var(--color-blue-50);
+    };
 }
 

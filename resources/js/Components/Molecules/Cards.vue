@@ -16,8 +16,6 @@
 <script setup>
 import TeaserCard from "./TeaserCard.vue";
 import { useForecastDays } from '@/Components/Helpers/helpers.data-hardcoded';
-import Icon from '@/Components/Atoms/Icon.vue';
-
 
 const forecastDays = useForecastDays();
 </script>

@@ -1,6 +1,7 @@
 @use '../0-abstracts/colors' as *;
 @use '../0-abstracts/typography' as *;
 @use '../2-tools/fluid-unit' as *;
+@use '../2-tools/mixins' as *;
 
 html {
   scroll-behavior: smooth;
@@ -29,6 +30,10 @@ html {
 
   --border-radius-xs: #{fluid-unit(4, 6)};
   --border-radius-s: #{fluid-unit(8, 12)};
+
+  --transition-speed-s: 300ms;
+  --transition-speed-m: 600ms;
+  --transition-speed-l: 900ms;
 }
 
 body {
@@ -38,3 +43,10 @@ body {
   background-color: var(--color-gray-50);
 }
 
+a,
+button,
+input {
+    &:focus-visible {
+        @include focus-visible;
+    }
+}

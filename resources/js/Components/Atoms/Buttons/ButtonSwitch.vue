@@ -3,7 +3,7 @@
     <div class="button-switch">
         <button
             v-if="internalValue === 'chat'"
-            class="button-switch__button button"
+            class="button-switch__button"
             id="button-switch-chat"
             type="button"
             @click="toggleWidget('cards')"
@@ -13,7 +13,7 @@
         </button>
         <button
             v-else-if="internalValue === 'cards'"
-            class="button-switch__button button"
+            class="button-switch__button"
             id="button-switch-cards"
             type="button"
             @click="toggleWidget('chat')"
