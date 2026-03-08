@@ -3,7 +3,7 @@
 @use '../2-tools/fluid-unit' as *;
 
 .chat {
-    @include container-query(dashboard, large) {
+    @include container-query(dashboard, 900px) {
         margin-block-start: calc(var(--space-xxl) + 40px); // magic number: alignment with dashboard's heading
     }
 }
@@ -19,7 +19,7 @@
     text-align: center;
     margin-block-start: calc(var(--space-l));
 
-    @include container-query(dashboard, large) {
+    @include container-query(dashboard, 900px) {
         text-align: start;
         margin-block-start: 0;
     }

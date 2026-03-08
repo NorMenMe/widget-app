@@ -3,7 +3,7 @@
 @use '../2-tools/fluid-unit' as *;
 
 .cards {
-    @include container-query(dashboard, medium) {
+    @include container-query(dashboard, 700px) {
         margin-block-start: calc(var(--space-xxl) + 40px); // magic number: alignment with dashboard's heading
     }
 }
@@ -12,7 +12,7 @@
     margin-block-start: calc(var(--space-l));
     text-align: center;
 
-    @include container-query(dashboard, medium) {
+    @include container-query(dashboard, 700px) {
         margin-block-start: 0;
         text-align: start;
     }
@@ -30,7 +30,7 @@
     gap: var(--space-s);
     justify-content: center;
 
-    @include container-query(dashboard, medium) {
+    @include container-query(dashboard, 700px) {
         justify-content: start;
     }
 }

@@ -37,7 +37,7 @@
     display: grid;
     gap: var(--space-xs);
 
-    @include container-query(alert, small) {
+    @include container-query(alert, 300px) {
         grid-template-columns: max-content 1fr;
     }
 }
@@ -45,7 +45,7 @@
 .alert__icon--info {
     display: none;
 
-    @include container-query(alert, small) {
+    @include container-query(alert, 300px) {
         display: block;
         width: fluid-unit(16, 26);
         position: relative;

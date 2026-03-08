@@ -11,7 +11,7 @@
 .teaser-card__article {
     text-align: center;
 
-    @include container-query(dashboard, medium) {
+    @include container-query(dashboard, 700px) {
         display: grid;
 
         & > * {
@@ -21,7 +21,7 @@
 }
 
 .teaser-card__article .front {
-    @include container-query(dashboard, medium) {
+    @include container-query(dashboard, 700px) {
         opacity: 1;
         transform: rotateY(0deg);
         transform-style: preserve-3d;
@@ -30,7 +30,7 @@
 }
 
 .teaser-card__article .back {
-    @include container-query(dashboard, medium) {
+    @include container-query(dashboard, 700px) {
         opacity: 0;
         transform: rotateY(-180deg);
         align-content: center;
@@ -43,7 +43,7 @@
 }
 
 .teaser-card:hover {
-    @include container-query(dashboard, medium) {
+    @include container-query(dashboard, 700px) {
         & .front {
             transform: rotateY(180deg);
             opacity: 0;
