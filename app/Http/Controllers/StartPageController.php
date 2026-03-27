@@ -24,7 +24,13 @@ class StartPageController extends Controller
                 'query' => $location
             ]);
 
-            $data = $response->successful() ? $response->json() : $dummyData;
+            if ($response->successful()) {
+                $data = $response->json();
+                }
+            else {
+                $data = $dummyData;
+                $apiError = 'Hello User, there is an issue with the API: you see currently hardcoded data as fallback.';
+            }
 
             } catch (\Exception $e) {
             \Log::error('API fetch failed: ' . $e->getMessage());
