@@ -1,13 +1,12 @@
 <template>
-    <form :class="class" @submit.prevent="handleSubmit" action="">
-        <input
-            v-model="searchQuery"
-            class="input--search"
-            type="search"
-            id="input-search"
-            :placeholder="placeholder"
-        />
-    </form>
+    <input
+        v-model="searchQuery"
+        class="input--search"
+        :class="class"
+        type="search"
+        id="input-search"
+        :placeholder="placeholder"
+    />
 </template>
 
 <script setup>

@@ -1,12 +1,13 @@
 <template>
     <div class="search-field">
-        <icon class="search-field__icon" name="magnifier"></icon>
-        <input-search
-            class="search-field__input"
-            placeholder="Search for a city"
-            @update-value="updateParentValue"
-        >
-        </input-search>
+        <form class="search-field__form" @submit.prevent="handleSubmit">
+            <icon class="search-field__icon" name="magnifier"></icon>
+            <input-search
+                class="search-field__input"
+                placeholder="Search for a city"
+            >
+            </input-search>
+        </form>
     </div>
 </template>
 
@@ -17,7 +18,10 @@ import { ref } from "vue";
 
 const searchLocation = ref();
 
-const updateParentValue = (value) => {
-    searchLocation.value = value;
+const handleSubmit = (event) => {
+    const input = event.srcElement.querySelector("input");
+    if (input) {
+        searchLocation.value = input.value;
+    }
 };
 </script>
