@@ -1,38 +1,34 @@
 <template>
-    <input
-    :class="class"
-    v-model="searchQuery"
-    class="input--search"
-    type="search"
-    id="input-search"
-    :placeholder="placeholder"
-    @keydown.enter=triggerSearch
-    >
-    <slot></slot>
+    <form :class="class" @submit.prevent="handleSubmit" action="">
+        <input
+            v-model="searchQuery"
+            class="input--search"
+            type="search"
+            id="input-search"
+            :placeholder="placeholder"
+        />
+    </form>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { router } from '@inertiajs/vue3';
+import { ref } from "vue";
+import { defineEmits } from "vue";
 
-const searchQuery = ref('');
+const searchQuery = defineModel();
+const emit = defineEmits(["update-value"]);
 
 const props = defineProps({
-  class: {
-    type: String,
-    default: 'input'
-  },
-  placeholder: {
-    type: String,
-    default: 'Search for'
-  },
+    class: {
+        type: String,
+        default: "form-input",
+    },
+    placeholder: {
+        type: String,
+        default: "Search for",
+    },
 });
 
-
-function triggerSearch() {
-    router.get('/', { query: searchQuery.value }, {
-        preserveState: true,
-        preserveScroll: true
-    });
-}
+const handleSubmit = (event) => {
+    emit("update-value", event.srcElement.firstElementChild.value);
+};
 </script>
