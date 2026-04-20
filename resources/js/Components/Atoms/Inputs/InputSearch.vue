@@ -1,6 +1,5 @@
 <template>
     <input
-        v-model="searchQuery"
         class="input--search"
         :class="class"
         type="search"
@@ -11,10 +10,6 @@
 
 <script setup>
 import { ref } from "vue";
-import { defineEmits } from "vue";
-
-const searchQuery = defineModel();
-const emit = defineEmits(["update-value"]);
 
 const props = defineProps({
     class: {
@@ -26,8 +21,4 @@ const props = defineProps({
         default: "Search for",
     },
 });
-
-const handleSubmit = (event) => {
-    emit("update-value", event.srcElement.firstElementChild.value);
-};
 </script>

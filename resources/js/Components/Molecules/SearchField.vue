@@ -14,14 +14,14 @@
 <script setup>
 import InputSearch from "@/Components/Atoms/Inputs/InputSearch.vue";
 import Icon from "@/Components/Atoms/Icon.vue";
+import { store } from "@/Store/store";
 import { ref } from "vue";
-
-const searchLocation = ref();
 
 const handleSubmit = (event) => {
     const input = event.srcElement.querySelector("input");
+
     if (input) {
-        searchLocation.value = input.value;
+        store.addSearchInputs(input.value);
     }
 };
 </script>

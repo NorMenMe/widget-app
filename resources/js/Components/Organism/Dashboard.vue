@@ -4,28 +4,32 @@
             <div class="dashboard__main">
                 <search-field></search-field>
                 <teaser-dashboard :data="data"></teaser-dashboard>
+                <list-input></list-input>
             </div>
             <div class="dashboard__extra">
                 <cards v-if="currentView === 'cards'"></cards>
                 <chat v-else-if="currentView === 'chat'"></chat>
-                <button-switch v-model:internalValue="currentView"></button-switch>
+                <button-switch
+                    v-model:internalValue="currentView"
+                ></button-switch>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-    import { ref } from 'vue';
-    import ButtonSwitch from '@/Components/Atoms/Buttons/ButtonSwitch.vue';
-    import SearchField from '@/Components/Molecules/SearchField.vue';
-    import TeaserDashboard from '@/Components/Molecules/TeaserDashboard.vue';
-    import Cards from '@/Components/Molecules/Cards.vue';
-    import Chat from '@/Components/Molecules/Chat.vue';
+import { ref, computed } from "vue";
+import ButtonSwitch from "@/Components/Atoms/Buttons/ButtonSwitch.vue";
+import SearchField from "@/Components/Molecules/SearchField.vue";
+import TeaserDashboard from "@/Components/Molecules/TeaserDashboard.vue";
+import Cards from "@/Components/Molecules/Cards.vue";
+import Chat from "@/Components/Molecules/Chat.vue";
+import ListInput from "@/Components/Molecules/ListInput.vue";
+import { store } from "@/Store/store";
 
-    defineProps({
-        data: Object,
-    });
+defineProps({
+    data: Object,
+});
 
-    const currentView = ref('cards');
+const currentView = ref("cards");
 </script>
-
