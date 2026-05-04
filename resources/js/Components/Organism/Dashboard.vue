@@ -26,20 +26,13 @@ import Cards from "@/Components/Molecules/Cards.vue";
 import Chat from "@/Components/Molecules/Chat.vue";
 import ListInput from "@/Components/Molecules/ListInput.vue";
 import { store } from "@/Store/store";
+import { useSearchInputs } from "@/Composables/useSearchInputs.js";
 
 defineProps({
     data: Object,
 });
 
-const searchInputs = ref();
 const currentView = ref("cards");
 
-watch(
-    () => store.searchInputs,
-    (newInputValue) => {
-        if (newInputValue?.length) {
-            searchInputs.value = store.searchInputs;
-        }
-    },
-);
+const { searchInputs } = useSearchInputs();
 </script>

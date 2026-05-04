@@ -4,8 +4,8 @@
             <h2 class="list-input__heading">Searched Cities</h2>
             <div class="list-input__main">
                 <ul class="list-input__list">
-                    <li class="list-input__item" v-for="item in items">
-                        <span>{{ item }}</span>
+                    <li class="list-input__item" v-for="input in searchInputs">
+                        <span>{{ input }}</span>
                     </li>
                 </ul>
             </div>
@@ -16,16 +16,7 @@
 <script setup>
 import { ref, watch, onMounted, computed } from "vue";
 import Icon from "@/Components/Atoms/Icon.vue";
-import { store } from "@/Store/store";
+import { useSearchInputs } from "@/Composables/useSearchInputs.js";
 
-const items = ref();
-
-watch(
-    () => store.searchInputs,
-    (newInputValue) => {
-        if (newInputValue?.length) {
-            items.value = store.searchInputs;
-        }
-    },
-);
+const { searchInputs } = useSearchInputs();
 </script>
