@@ -1,7 +1,7 @@
 <template>
     <section class="list-input">
         <div class="list-input__inner">
-            <h2 class="list-input__heading">Searched Cities</h2>
+            <h3 class="list-input__heading">Searched Cities</h3>
             <div class="list-input__main">
                 <ul class="list-input__list">
                     <li

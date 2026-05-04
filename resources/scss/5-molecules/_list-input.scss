@@ -1,0 +1,26 @@
+.list-input {
+    margin-block-start: var(--space-l);
+}
+
+.list-input__list {
+    margin-block-start: var(--space-s);
+    padding: var(--space-m);
+    border-radius: var(--border-radius-xs);
+    background-color: var(--color-gray-50);
+}
+
+.list-input__item {
+    position: relative;
+}
+
+.list-input__item::after {
+    content: "";
+    position: absolute;
+    left: calc(0.55em * -1);
+    width: 0.3em;
+    height: 0.3em;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: var(--color-black-50);
+}
