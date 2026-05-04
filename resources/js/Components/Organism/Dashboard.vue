@@ -4,7 +4,10 @@
             <div class="dashboard__main">
                 <search-field></search-field>
                 <teaser-dashboard :data="data"></teaser-dashboard>
-                <list-input v-if="searchInputs"></list-input>
+                <list-input
+                    v-if="searchInputs"
+                    :searchInputs="searchInputs"
+                ></list-input>
             </div>
             <div class="dashboard__extra">
                 <cards v-if="currentView === 'cards'"></cards>
@@ -18,7 +21,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import ButtonSwitch from "@/Components/Atoms/Buttons/ButtonSwitch.vue";
 import SearchField from "@/Components/Molecules/SearchField.vue";
 import TeaserDashboard from "@/Components/Molecules/TeaserDashboard.vue";
