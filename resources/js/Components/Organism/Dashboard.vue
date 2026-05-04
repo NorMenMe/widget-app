@@ -4,7 +4,7 @@
             <div class="dashboard__main">
                 <search-field></search-field>
                 <teaser-dashboard :data="data"></teaser-dashboard>
-                <list-input></list-input>
+                <list-input v-if="searchInputs"></list-input>
             </div>
             <div class="dashboard__extra">
                 <cards v-if="currentView === 'cards'"></cards>
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, watch } from "vue";
 import ButtonSwitch from "@/Components/Atoms/Buttons/ButtonSwitch.vue";
 import SearchField from "@/Components/Molecules/SearchField.vue";
 import TeaserDashboard from "@/Components/Molecules/TeaserDashboard.vue";
@@ -31,5 +31,15 @@ defineProps({
     data: Object,
 });
 
+const searchInputs = ref();
 const currentView = ref("cards");
+
+watch(
+    () => store.searchInputs,
+    (newInputValue) => {
+        if (newInputValue?.length) {
+            searchInputs.value = store.searchInputs;
+        }
+    },
+);
 </script>
