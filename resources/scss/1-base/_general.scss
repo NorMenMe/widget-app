@@ -1,46 +1,52 @@
-@use '../0-abstracts/colors' as *;
-@use '../0-abstracts/typography' as *;
-@use '../2-tools/fluid-unit' as *;
-@use '../2-tools/mixins' as *;
+@use "../0-abstracts/colors" as *;
+@use "../0-abstracts/typography" as *;
+@use "../2-tools/fluid-unit" as *;
+@use "../2-tools/mixins" as *;
 
 html {
-  scroll-behavior: smooth;
-  height: 100%;
+    scroll-behavior: smooth;
+    height: 100%;
 }
 
 :root {
-  @each $color-name, $color-hsl in $colors {
-    --color-#{$color-name}: #{hsl(($color-hsl))};
-    --color-#{$color-name}-hsl: #{$color-hsl};
-  }
+    @each $color-name, $color-hsl in $colors {
+        --color-#{$color-name}: #{hsl(($color-hsl))};
+        --color-#{$color-name}-hsl: #{$color-hsl};
+    }
 
-  --color-text: var(--color-black-50);
-  --color-focus-visible: var(--color-orange-50);
+    --color-text: var(--color-black-50);
+    --color-focus-visible: var(--color-orange-50);
 
-  --space-xs: #{fluid-unit(4, 8)};
-  --space-s: #{fluid-unit(8, 16)};
-  --space-m: #{fluid-unit(16, 24)};
-  --space-l: #{fluid-unit(24, 40)};
-  --space-xl: #{fluid-unit(30, 48)};
-  --space-xxl: #{fluid-unit(42, 96)};
-  --space-xxxl: #{fluid-unit(80, 120)};
+    --space-xs: #{fluid-unit(4, 8)};
+    --space-s: #{fluid-unit(8, 16)};
+    --space-m: #{fluid-unit(16, 24)};
+    --space-l: #{fluid-unit(24, 40)};
+    --space-xl: #{fluid-unit(30, 48)};
+    --space-xxl: #{fluid-unit(42, 96)};
+    --space-xxxl: #{fluid-unit(80, 120)};
 
-  --space-s-l: #{fluid-unit(8, 100)};
-  --space-xl-xxxl: #{fluid-unit(30, 140)};
+    --space-s-l: #{fluid-unit(8, 100)};
+    --space-xl-xxxl: #{fluid-unit(30, 140)};
 
-  --border-radius-xs: #{fluid-unit(4, 6)};
-  --border-radius-s: #{fluid-unit(8, 12)};
+    --border-radius-xs: #{fluid-unit(4, 6)};
+    --border-radius-s: #{fluid-unit(8, 12)};
 
-  --transition-speed-s: 300ms;
-  --transition-speed-m: 600ms;
-  --transition-speed-l: 900ms;
+    --transition-speed-s: 300ms;
+    --transition-speed-m: 600ms;
+    --transition-speed-l: 1200ms;
+
+    --ease-1: cubic-bezier(0.25, 0, 0.5, 1);
+    --ease-2: cubic-bezier(0.25, 0, 0.4, 1);
+    --ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+    --ease-4: cubic-bezier(0.25, 0, 0.2, 1);
+    --ease-5: cubic-bezier(0.25, 0, 0.1, 1);
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: $font-family-base;
-  background-color: var(--color-gray-50);
+    margin: 0;
+    padding: 0;
+    font-family: $font-family-base;
+    background-color: var(--color-gray-50);
 }
 
 a,

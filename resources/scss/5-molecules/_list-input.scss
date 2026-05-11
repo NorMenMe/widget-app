@@ -24,3 +24,16 @@
     border-radius: 50%;
     background-color: var(--color-black-50);
 }
+
+// VUE NATIVE TRANSITION
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity var(--transition-speed-l) var(--ease-5);
+    opacity: 1;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}

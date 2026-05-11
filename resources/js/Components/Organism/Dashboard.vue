@@ -4,10 +4,12 @@
             <div class="dashboard__main">
                 <search-field></search-field>
                 <teaser-dashboard :data="data"></teaser-dashboard>
-                <list-input
-                    v-if="searchInputs"
-                    :searchInputs="searchInputs"
-                ></list-input>
+                <Transition>
+                    <list-input
+                        v-if="searchInputs"
+                        :searchInputs="searchInputs"
+                    ></list-input>
+                </Transition>
             </div>
             <div class="dashboard__extra">
                 <cards v-if="currentView === 'cards'"></cards>
