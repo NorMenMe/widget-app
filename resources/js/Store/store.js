@@ -16,6 +16,8 @@ export const store = reactive({
     isAllChatRead : false,
     searchInputs : [],
     addSearchInputs(input) {
-        this.searchInputs = [...this.searchInputs, input]
+        if (!input) return;
+        this.searchInputs = [...this.searchInputs, input];
     }
 })
+
