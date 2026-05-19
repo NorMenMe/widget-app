@@ -7,7 +7,7 @@
                 <Transition>
                     <list-input
                         v-if="searchInputs"
-                        :searchInputs="searchInputs"
+                        :search-inputs="searchInputs"
                     ></list-input>
                 </Transition>
             </div>
@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed, onMounted } from "vue";
 import ButtonSwitch from "@/Components/Atoms/Buttons/ButtonSwitch.vue";
 import SearchField from "@/Components/Molecules/SearchField.vue";
 import TeaserDashboard from "@/Components/Molecules/TeaserDashboard.vue";
@@ -36,8 +36,6 @@ import { useSearchInputs } from "@/Composables/useSearchInputs.js";
 defineProps({
     data: Object,
 });
-
 const currentView = ref("cards");
-
 const { searchInputs } = useSearchInputs();
 </script>

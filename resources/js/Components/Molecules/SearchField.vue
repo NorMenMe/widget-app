@@ -16,16 +16,12 @@ import InputSearch from "@/Components/Atoms/Inputs/InputSearch.vue";
 import Icon from "@/Components/Atoms/Icon.vue";
 import { store } from "@/Store/store";
 import { ref } from "vue";
-import useLocalStorage from "../../Composables/useLocalStorage.js";
-
-const { userPreferences } = useLocalStorage();
 
 const handleSubmit = (event) => {
     const input = event.currentTarget.querySelector("input");
 
     if (input) {
         store.addSearchInputs(input.value);
-        userPreferences.value.searchInputs.push(input.value);
     }
 };
 </script>
