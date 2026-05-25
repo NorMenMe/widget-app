@@ -3,11 +3,6 @@ import { chatItems } from '@/Components/Helpers/helpers.data-hardcoded';
 import useLocalStorage from "@/Composables/useLocalStorage";
 
 export const store = reactive({
-    userPreferences : {
-        theme: "light",
-        language: "en",
-        searchInputs: []
-    },
     teaserChatItems : [],
     initializeChatItems() {
         const counter = chatItems.items.length -1;
