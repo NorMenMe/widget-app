@@ -6,7 +6,7 @@
                 <teaser-dashboard :data="data"></teaser-dashboard>
                 <Transition>
                     <list-input
-                        v-if="searchInputs"
+                        v-if="hasSearchInputs"
                         :search-inputs="searchInputs"
                     ></list-input>
                 </Transition>
@@ -37,5 +37,5 @@ defineProps({
     data: Object,
 });
 const currentView = ref("cards");
-const { searchInputs } = useSearchInputs();
+const { searchInputs, hasSearchInputs } = useSearchInputs();
 </script>
