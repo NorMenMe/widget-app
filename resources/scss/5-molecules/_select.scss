@@ -1,0 +1,82 @@
+@use "../2-tools/fluid-unit" as *;
+
+select,
+select::picker(select) {
+    appearance: base-select;
+}
+
+select {
+    display: flex;
+    max-width: fit-content;
+    margin-inline-start: auto;
+    padding: 0;
+    transition: 0.4s;
+    border: transparent;
+
+    &:hover {
+        cursor: pointer;
+        background-color: transparent;
+    }
+}
+
+select option:hover {
+    background-color: var(--color-gray-50);
+    cursor: pointer;
+}
+
+select option::checkmark {
+    content: "";
+}
+
+selectedcontent > * {
+    transition:
+        transform 1s var(--ease-spring-4),
+        display 1s allow-discrete,
+        opacity 0.3s ease-in;
+
+    @starting-style {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    opacity: 1;
+}
+
+.select__button {
+    font-size: fluid-unit(14, 15);
+}
+
+selectedcontent .custom-option {
+    display: flex;
+    gap: var(--space-xs);
+    font-weight: var(--font-weight-7);
+}
+
+::picker-icon {
+    display: none;
+}
+
+select::picker(select) {
+    background: var(--color-white-50);
+    border: transparent;
+    border-radius: var(--border-radius-xs);
+    padding: 0;
+    margin-block: 5px;
+    box-shadow: var(--shadow-1);
+}
+
+.custom-option__icon {
+    display: none;
+
+    selectedcontent & {
+        display: block;
+        width: 1em;
+        stroke: black;
+        stroke-width: 3;
+        transition: transform 1s var(--ease-spring-2);
+    }
+
+    select:open & {
+        transform: rotate(0.5turn);
+    }
+}

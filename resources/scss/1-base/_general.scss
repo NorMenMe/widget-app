@@ -24,14 +24,18 @@ html {
     --space-xl: #{fluid-unit(30, 48)};
     --space-xxl: #{fluid-unit(42, 96)};
     --space-xxxl: #{fluid-unit(80, 120)};
-
     --space-s-l: #{fluid-unit(8, 100)};
     --space-xl-xxxl: #{fluid-unit(30, 140)};
+
+    --font-weight-3: #{$font-weight-light};
+    --font-weight-4: #{$font-weight-regular};
+    --font-weight-5: #{$font-weight-medium};
+    --font-weight-7: #{$font-weight-bold};
 
     --border-radius-xs: #{fluid-unit(4, 6)};
     --border-radius-s: #{fluid-unit(8, 12)};
 
-    --transition-speed-s: 300ms;
+    --shadow-1: 2.2px 4.3px 4.3px hsl(60 4% 11% / 0.43);
     --transition-speed-m: 600ms;
     --transition-speed-l: 1200ms;
 
@@ -40,6 +44,49 @@ html {
     --ease-3: cubic-bezier(0.25, 0, 0.3, 1);
     --ease-4: cubic-bezier(0.25, 0, 0.2, 1);
     --ease-5: cubic-bezier(0.25, 0, 0.1, 1);
+    --ease-spring-2: linear(
+        0,
+        0.007,
+        0.029 2.2%,
+        0.118 4.7%,
+        0.625 14.4%,
+        0.826 19%,
+        0.902,
+        0.962,
+        1.008 26.1%,
+        1.041 28.7%,
+        1.064 32.1%,
+        1.07 36%,
+        1.061 40.5%,
+        1.015 53.4%,
+        0.999 61.6%,
+        0.995 71.2%,
+        1
+    );
+    --ease-spring-4: linear(
+        0,
+        0.009,
+        0.037 1.7%,
+        0.153 3.6%,
+        0.776 10.3%,
+        1.001,
+        1.142 16%,
+        1.185,
+        1.209 19%,
+        1.215 19.9% 20.8%,
+        1.199,
+        1.165 25%,
+        1.056 30.3%,
+        1.008 33%,
+        0.973,
+        0.955 39.2%,
+        0.953 41.1%,
+        0.957 43.3%,
+        0.998 53.3%,
+        1.009 59.1% 63.7%,
+        0.998 78.9%,
+        1
+    );
 }
 
 body {
